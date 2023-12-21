@@ -1,0 +1,20 @@
+{
+  "name": "ui",
+  "private": true,
+  "scripts": {
+    "postinstall": "npx husky install"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@biomejs/biome": "~1.4.1",
+    "@changesets/cli": "~2.27.1",
+    "@commitlint/cli": "~18.4.3",
+    "@commitlint/config-conventional": "~18.4.3",
+    "changeset": "~0.2.6",
+    "husky": "~8.0.3",
+    "turbo": "~1.11.2",
+    "typescript": "~5.3.3"
+  }
+}
