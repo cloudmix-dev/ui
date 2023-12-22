@@ -3,15 +3,8 @@ import {
   ClipboardIcon,
 } from "@heroicons/react/24/solid";
 import cn from "classnames";
-import { Highlight, Prism } from "prism-react-renderer";
+import { Highlight } from "prism-react-renderer";
 import { Fragment, useState } from "react";
-
-// This is horrible, but Prism sucks:
-// https://www.npmjs.com/package/prism-react-renderer#custom-language-support
-globalThis.Prism = Prism;
-
-import "prismjs/components/prism-bash";
-import "prismjs/components/prism-json";
 
 export interface CodeProps {
   content: string;

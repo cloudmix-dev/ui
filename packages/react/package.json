@@ -1,10 +1,20 @@
 {
   "name": "@cloudmix-dev/react",
   "version": "0.0.4",
-  "main": "./dist/index.js",
+  "files": ["dist"],
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.es.js",
   "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.cjs.js"
+    }
+  },
   "scripts": {
-    "build": "tsc",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
     "prepare": "npm run build"
   },
   "dependencies": {
@@ -17,7 +27,9 @@
   },
   "devDependencies": {
     "@types/react": "~18.2.42",
-    "react": "~18.2.0"
+    "@vitejs/plugin-react": "~4.2.1",
+    "react": "~18.2.0",
+    "vite-plugin-dts": "~3.6.4"
   },
   "peerDependencies": {
     "react": "~18.2.0"
