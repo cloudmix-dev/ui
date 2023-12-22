@@ -2,6 +2,8 @@ import path from "node:path";
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 
+import pkg from "./package.json";
+
 export default defineConfig({
   plugins: [
     dts({
@@ -18,13 +20,8 @@ export default defineConfig({
     },
     rollupOptions: {
       external: [
-        "@tailwindcss/container-queries",
-        "@tailwindcss/typography",
-        "lodash.merge",
-        "tailwindcss",
-        "tailwindcss/colors",
-        "tailwindcss/defaultTheme",
-        "tailwindcss/plugin",
+        ...Object.keys(pkg.dependencies),
+        ...Object.keys(pkg.devDependencies),
       ],
     },
   },

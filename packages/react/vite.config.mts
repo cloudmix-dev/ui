@@ -3,6 +3,8 @@ import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 
+import pkg from "./package.json";
+
 export default defineConfig({
   plugins: [
     react(),
@@ -20,19 +22,13 @@ export default defineConfig({
     },
     rollupOptions: {
       external: [
-        "@heroicons/react",
-        "class-variance-authority",
-        "classnames",
-        "react",
-        "react-aria-components",
-        "react-dom",
-        "prism-react-renderer",
-        "prismjs",
+        ...Object.keys(pkg.dependencies),
+        ...Object.keys(pkg.devDependencies),
+        ...Object.keys(pkg.peerDependencies),
       ],
       output: {
         globals: {
           react: "React",
-          "react-dom": "ReactDOM",
         },
       },
     },

@@ -21,9 +21,13 @@ function TextField({
   ...props
 }: TextFieldProps) {
   return (
-    <BaseTextField {...props} isRequired={isRequired}>
+    <BaseTextField
+      {...props}
+      className="flex flex-col space-y-2"
+      isRequired={isRequired}
+    >
       {label && (
-        <Label className="mb-2 text-sm text-neutral-950 dark:text-neutral-50">
+        <Label className="text-sm text-neutral-950 dark:text-neutral-50">
           {label}
           {isRequired && (
             <>
@@ -47,16 +51,39 @@ function TextField({
       {description && (
         <Text
           slot="description"
-          className="mt-2 text-xs text-neutral-500 dark:text-neutral-400"
+          className="text-xs text-neutral-500 dark:text-neutral-400"
         >
           {description}
         </Text>
       )}
-      <FieldError className="mt-2 text-xs text-red-500" />
+      <FieldError className="text-xs text-red-500" />
     </BaseTextField>
   );
 }
 
 TextField.displayName = "TextField";
+
+export interface TextFieldSkeletonProps {
+  description?: boolean;
+  label?: boolean;
+}
+
+TextField.Skeleton = function TextFieldSkeleton({
+  description,
+  label,
+}: TextFieldSkeletonProps) {
+  return (
+    <div className="flex flex-col space-y-2">
+      {label && (
+        <div className="h-4 w-28 rounded-md bg-neutral-200 dark:bg-neutral-800 animate-pulse" />
+      )}
+      <div className="inline-block h-10 w-48 rounded-md bg-neutral-200 dark:bg-neutral-800 animate-pulse" />
+
+      {description && (
+        <div className="h-3 w-40 rounded-md bg-neutral-200 dark:bg-neutral-800 animate-pulse" />
+      )}
+    </div>
+  );
+};
 
 export { TextField };

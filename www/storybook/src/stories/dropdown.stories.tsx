@@ -20,7 +20,7 @@ export default meta;
 
 type DefaultStory = StoryObj<typeof Dropdown>;
 
-export const Skeleton: DefaultStory = {
+export const Default: DefaultStory = {
   render: () => (
     <Dropdown>
       <Dropdown.Button>Dropdown</Dropdown.Button>
@@ -31,4 +31,10 @@ export const Skeleton: DefaultStory = {
       </Dropdown.Menu>
     </Dropdown>
   ),
+};
+
+type SkeletonStory = StoryObj<typeof Dropdown.Skeleton>;
+
+export const Skeleton: SkeletonStory = {
+  render: () => <Dropdown.Skeleton />,
 };

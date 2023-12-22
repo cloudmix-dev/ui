@@ -1,5 +1,5 @@
 import { TextField } from "@cloudmix-dev/react";
-import { type Meta } from "@storybook/react";
+import { type Meta, type StoryObj } from "@storybook/react";
 
 import { StoryLayout } from "../components/layout";
 
@@ -52,4 +52,10 @@ export const Disabled = {
     isDisabled: true,
     placeholder: "Text field...",
   },
+};
+
+type SkeletonStory = StoryObj<typeof TextField.Skeleton>;
+
+export const Skeleton: SkeletonStory = {
+  render: () => <TextField.Skeleton label description />,
 };

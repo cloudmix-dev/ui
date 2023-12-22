@@ -1,21 +1,19 @@
 {
   "name": "@cloudmix-dev/tailwind",
   "version": "0.0.8",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.es.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "import": {
-        "default": "./dist/index.es.mjs",
-        "types": "./dist/index.d.ts"
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.es.mjs"
       },
       "require": {
-        "default": "./dist/index.cjs.js",
-        "types": "./dist/index.d.ts"
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.cjs.js"
       }
     }
   },
