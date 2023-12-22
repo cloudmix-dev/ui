@@ -19,12 +19,14 @@ export default defineConfig({
     },
     rollupOptions: {
       external: [
-        "react",
-        "react-dom",
         "@heroicons/react",
+        "class-variance-authority",
+        "classnames",
+        "react",
+        "react-aria-components",
+        "react-dom",
         "prism-react-renderer",
         "prismjs",
-        "react-aria-components",
       ],
       output: {
         globals: {

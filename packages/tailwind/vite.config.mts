@@ -17,9 +17,13 @@ export default defineConfig({
     },
     rollupOptions: {
       external: [
-        "tailwindcss",
         "@tailwindcss/container-queries",
         "@tailwindcss/typography",
+        "lodash.merge",
+        "tailwindcss",
+        "tailwindcss/colors",
+        "tailwindcss/defaultTheme",
+        "tailwindcss/plugin",
       ],
     },
   },
