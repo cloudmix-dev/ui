@@ -5,8 +5,7 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src/**/*.ts",
-    "src/components/code.tsx"
+    "src/**/*",
   ],
   "exclude": [
     "node_modules"

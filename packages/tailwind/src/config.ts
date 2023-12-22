@@ -13,7 +13,7 @@ export function config(config?: Config) {
         "./node_modules/@cloudmix-dev/react/**/*.js",
         "./src/**/*.{astro,html,md,mdx,tsx}",
       ],
-      darkMode: ["class", '[data-mode="dark"]'],
+      darkMode: "class",
       theme: {
         colors: {
           neutral: colors.zinc,

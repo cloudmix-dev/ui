@@ -1,18 +1,22 @@
 import { Code } from "@cloudmix-dev/react";
+import { type Meta } from "@storybook/react";
 
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
-export default {
+import { StoryLayout } from "../components/layout";
+
+const meta: Meta<typeof Code> = {
   title: "Components/Code",
   component: Code,
-  parameters: {
-    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
-    layout: "centered",
-  },
-  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
+  decorators: [
+    (Story: React.ComponentType) => (
+      <StoryLayout>
+        <Story />
+      </StoryLayout>
+    ),
+  ],
   tags: ["autodocs"],
-  // More on argTypes: https://storybook.js.org/docs/api/argtypes
-  argTypes: {},
 };
+
+export default meta;
 
 export const Default = {
   args: {

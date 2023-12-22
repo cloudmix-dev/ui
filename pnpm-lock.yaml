@@ -83,7 +83,7 @@ importers:
   www/storybook:
     dependencies:
       '@cloudmix-dev/react':
-        specifier: workspace:~0.0.0
+        specifier: workspace:~0.0.1
         version: link:../../packages/react
       react:
         specifier: ~18.2.0
@@ -93,7 +93,7 @@ importers:
         version: 18.2.0(react@18.2.0)
     devDependencies:
       '@cloudmix-dev/tailwind':
-        specifier: workspace:~0.0.0
+        specifier: workspace:~0.0.1
         version: link:../../packages/tailwind
       '@storybook/addon-essentials':
         specifier: ~7.6.6

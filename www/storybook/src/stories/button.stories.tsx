@@ -1,29 +1,36 @@
 import { Button } from "@cloudmix-dev/react";
+import { type Meta, type StoryObj } from "@storybook/react";
 
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
-export default {
+import { StoryLayout } from "../components/layout";
+
+const meta: Meta<typeof Button> = {
   title: "Components/Button",
   component: Button,
-  parameters: {
-    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
-    layout: "centered",
-  },
-  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
+  decorators: [
+    (Story: React.ComponentType) => (
+      <StoryLayout>
+        <Story />
+      </StoryLayout>
+    ),
+  ],
   tags: ["autodocs"],
-  // More on argTypes: https://storybook.js.org/docs/api/argtypes
-  argTypes: {},
 };
+
+export default meta;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Default = {
   args: {
+    variant: undefined,
     children: "Default button",
+    size: "default",
   },
 };
 
 export const Primary = {
   args: {
     variant: "primary",
+    size: "default",
     children: "Primary button",
   },
 };
@@ -31,6 +38,7 @@ export const Primary = {
 export const Secondary = {
   args: {
     variant: "secondary",
+    size: "default",
     children: "Secondary button",
   },
 };
@@ -38,6 +46,7 @@ export const Secondary = {
 export const Brand = {
   args: {
     variant: "brand",
+    size: "default",
     children: "Brand button",
   },
 };
@@ -45,6 +54,7 @@ export const Brand = {
 export const Danger = {
   args: {
     variant: "danger",
+    size: "default",
     children: "Danger button",
   },
 };
@@ -52,6 +62,7 @@ export const Danger = {
 export const Outline = {
   args: {
     variant: "outline",
+    size: "default",
     children: "Outline button",
   },
 };
@@ -59,6 +70,7 @@ export const Outline = {
 export const Ghost = {
   args: {
     variant: "ghost",
+    size: "default",
     children: "Ghost button",
   },
 };
@@ -66,12 +78,14 @@ export const Ghost = {
 export const Link = {
   args: {
     variant: "link",
+    size: "default",
     children: "Link button",
   },
 };
 
 export const Small = {
   args: {
+    variant: undefined,
     size: "sm",
     children: "Small button",
   },
@@ -79,7 +93,17 @@ export const Small = {
 
 export const Large = {
   args: {
+    variant: undefined,
     size: "lg",
     children: "Large button",
+  },
+};
+
+type SkeletonStory = StoryObj<typeof Button.Skeleton>;
+
+export const Skeleton: SkeletonStory = {
+  render: (props) => <Button.Skeleton {...props} />,
+  args: {
+    size: "default",
   },
 };

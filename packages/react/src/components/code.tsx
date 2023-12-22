@@ -43,8 +43,8 @@ function Code({ children, copy, fileExplorer, language, numbers }: CodeProps) {
 
   return (
     <div className="relative p-4 bg-neutral-800 rounded-lg font-mono ring-1 ring-neutral-700">
-      <div className="absolute -top-px left-20 right-11 h-px bg-gradient-to-r from-brand-300/0 via-brand-300/70 to-brand-300/0" />
-      <div className="absolute -bottom-px left-11 right-20 h-px bg-gradient-to-r from-brand-400/0 via-brand-400 to-brand-400/0" />
+      <div className="absolute -top-px left-20 right-11 h-px bg-gradient-to-r from-brand-300/0 via-brand-300/70 to-brand-300/0 dark:from-brand-700/0 dark:via-brand-700/50 dark:to-brand-700/0" />
+      <div className="absolute -bottom-px left-11 right-20 h-px bg-gradient-to-r from-brand-400/0 via-brand-400 to-brand-400/0 dark:from-brand-600/0 dark:via-brand-600/70 dark:to-brand-600/0" />
       {fileExplorer && (
         <div className="pb-3 border-b border-b-neutral-700">
           <svg
