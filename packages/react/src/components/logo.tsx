@@ -6,7 +6,7 @@ const logoVariants = cva("font-display font-black uppercase leading-none", {
   variants: {
     size: {
       default: "text-4xl sm:text-6xl xl:text-7xl",
-      sm: "text-3xl",
+      sm: "text-2xl sm:text-3xl",
       lg: "text-6xl sm:text-8xl xl:text-9xl",
     },
   },
