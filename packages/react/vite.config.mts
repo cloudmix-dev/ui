@@ -15,7 +15,8 @@ export default defineConfig({
       entry: path.resolve(__dirname, "src/index.ts"),
       name: "Cloudmix UI",
       formats: ["es", "cjs"],
-      fileName: (format) => `index.${format}.js`,
+      fileName: (format) =>
+        `index.${format}.${format === "cjs" ? "js" : "mjs"}`,
     },
     rollupOptions: {
       external: [

@@ -1,16 +1,15 @@
 {
   "name": "@cloudmix-dev/react",
   "version": "0.0.6",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "main": "./dist/index.cjs.js",
-  "module": "./dist/index.es.js",
+  "module": "./dist/index.es.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.es.js",
-      "require": "./dist/index.cjs.js"
+      "import": "./dist/index.es.mjs",
+      "require": "./dist/index.cjs.js",
+      "types": "./dist/index.d.ts"
     }
   },
   "scripts": {
