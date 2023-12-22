@@ -23,6 +23,9 @@ export function config(config?: Config) {
           success: colors.emerald,
           danger: colors.red,
           warning: colors.amber,
+          black: colors.black,
+          white: colors.white,
+          transparent: colors.transparent,
         },
         extend: {
           fontFamily: {

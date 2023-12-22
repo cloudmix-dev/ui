@@ -20,7 +20,7 @@ export default meta;
 
 export const Default = {
   args: {
-    children: `import path from "node:path";
+    content: `import path from "node:path";
 
 export const ROOT_DIR = path.resolve(__dirname, "..");
     `,
@@ -30,7 +30,7 @@ export const ROOT_DIR = path.resolve(__dirname, "..");
 
 export const WithNumbers = {
   args: {
-    children: `import path from "node:path";
+    content: `import path from "node:path";
 
 export const ROOT_DIR = path.resolve(__dirname, "..");
     `,
@@ -43,7 +43,7 @@ export const ROOT_DIR = path.resolve(__dirname, "..");
 
 export const WithCopy = {
   args: {
-    children: `import path from "node:path";
+    content: `import path from "node:path";
 
 export const ROOT_DIR = path.resolve(__dirname, "..");
     `,
@@ -56,7 +56,7 @@ export const ROOT_DIR = path.resolve(__dirname, "..");
 
 export const WithFileExporer = {
   args: {
-    children: `import path from "node:path";
+    content: `import path from "node:path";
 
 export const ROOT_DIR = path.resolve(__dirname, "..");
     `,

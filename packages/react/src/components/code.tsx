@@ -14,14 +14,14 @@ import "prismjs/components/prism-bash";
 import "prismjs/components/prism-json";
 
 export interface CodeProps {
-  children: string;
+  content: string;
   copy?: boolean;
   fileExplorer?: boolean;
   language: string;
   numbers?: boolean;
 }
 
-function Code({ children, copy, fileExplorer, language, numbers }: CodeProps) {
+function Code({ content, copy, fileExplorer, language, numbers }: CodeProps) {
   const [copying, setCopying] = useState(false);
   const onCopy = async () => {
     if (copying) {
@@ -31,7 +31,7 @@ function Code({ children, copy, fileExplorer, language, numbers }: CodeProps) {
     setCopying(true);
 
     try {
-      await navigator.clipboard.writeText(children.trimEnd());
+      await navigator.clipboard.writeText(content.trimEnd());
     } catch (_) {
       setCopying(false);
     }
@@ -42,7 +42,7 @@ function Code({ children, copy, fileExplorer, language, numbers }: CodeProps) {
   };
 
   return (
-    <div className="relative p-4 bg-neutral-800 rounded-lg font-mono ring-1 ring-neutral-700">
+    <div className="relative p-4 bg-neutral-900 rounded-lg font-mono ring-1 ring-neutral-700">
       <div className="absolute -top-px left-20 right-11 h-px bg-gradient-to-r from-brand-300/0 via-brand-300/70 to-brand-300/0 dark:from-brand-700/0 dark:via-brand-700/50 dark:to-brand-700/0" />
       <div className="absolute -bottom-px left-11 right-20 h-px bg-gradient-to-r from-brand-400/0 via-brand-400 to-brand-400/0 dark:from-brand-600/0 dark:via-brand-600/70 dark:to-brand-600/0" />
       {fileExplorer && (
@@ -70,7 +70,7 @@ function Code({ children, copy, fileExplorer, language, numbers }: CodeProps) {
             )}
           >
             {Array.from({
-              length: children.split("\n").length,
+              length: content.split("\n").length,
             }).map((_, index) => (
               <Fragment key={`line_number_${index}`}>
                 {(index + 1).toString().padStart(2, "0")}
@@ -81,7 +81,7 @@ function Code({ children, copy, fileExplorer, language, numbers }: CodeProps) {
         )}
         <div className={cn("flex-grow", fileExplorer && "pt-2")}>
           <Highlight
-            code={children.trimEnd()}
+            code={content.trimEnd()}
             language={language}
             theme={{
               plain: {},
