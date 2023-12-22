@@ -82,4 +82,7 @@ Button.Skeleton = function ButtonSkeleton({
   return <div className={cn(buttonSkeletonVariants({ size, className }))} />;
 };
 
+// @ts-expect-error
+Button.Skeleton.displayName = "Button.Skeleton";
+
 export { Button };

@@ -23,13 +23,7 @@ export interface LogoProps extends VariantProps<typeof logoVariants> {
   text?: string;
 }
 
-export function Logo({
-  className,
-  elementType,
-  footer,
-  text,
-  size,
-}: LogoProps) {
+function Logo({ className, elementType, footer, text, size }: LogoProps) {
   return (
     <div
       className={cn(
@@ -59,3 +53,7 @@ export function Logo({
     </div>
   );
 }
+
+Logo.displayName = "Logo";
+
+export { Logo };

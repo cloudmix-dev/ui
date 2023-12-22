@@ -1,13 +1,7 @@
 import { MoonIcon, SunIcon } from "@heroicons/react/24/solid";
 import { useEffect, useState } from "react";
 
-import {
-  Dropdown,
-  DropdownButton,
-  DropdownMenu,
-  DropdownMenuItem,
-  type DropdownMenuItemKey,
-} from "./dropdown";
+import { Dropdown, type DropdownMenuItemKey } from "./dropdown";
 
 function getThemePreference() {
   if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
@@ -19,7 +13,7 @@ function getThemePreference() {
     : "light";
 }
 
-export function ThemeSelector() {
+function ThemeSelector() {
   const [theme, setTheme] = useState(getThemePreference());
   const onChangeTheme = (theme: DropdownMenuItemKey) => {
     setTheme(theme.toString());
@@ -49,17 +43,21 @@ export function ThemeSelector() {
 
   return (
     <Dropdown>
-      <DropdownButton size="icon" aria-label="Select theme">
+      <Dropdown.Button size="icon" aria-label="Select theme">
         {theme === "dark" ? (
           <MoonIcon className="h-6 w-6 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
         ) : (
           <SunIcon className="h-6 w-6 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
         )}
-      </DropdownButton>
-      <DropdownMenu onAction={onChangeTheme}>
-        <DropdownMenuItem id="light">Light</DropdownMenuItem>
-        <DropdownMenuItem id="dark">Dark</DropdownMenuItem>
-      </DropdownMenu>
+      </Dropdown.Button>
+      <Dropdown.Menu onAction={onChangeTheme}>
+        <Dropdown.MenuItem id="light">Light</Dropdown.MenuItem>
+        <Dropdown.MenuItem id="dark">Dark</Dropdown.MenuItem>
+      </Dropdown.Menu>
     </Dropdown>
   );
 }
+
+ThemeSelector.displayName = "ThemeSelector";
+
+export { ThemeSelector };

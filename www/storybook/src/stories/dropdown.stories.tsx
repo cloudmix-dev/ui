@@ -1,9 +1,4 @@
-import {
-  Dropdown,
-  DropdownButton,
-  DropdownMenu,
-  DropdownMenuItem,
-} from "@cloudmix-dev/react";
+import { Dropdown } from "@cloudmix-dev/react";
 import { type Meta, type StoryObj } from "@storybook/react";
 
 import { StoryLayout } from "../components/layout";
@@ -28,12 +23,12 @@ type DefaultStory = StoryObj<typeof Dropdown>;
 export const Skeleton: DefaultStory = {
   render: () => (
     <Dropdown>
-      <DropdownButton>Dropdown</DropdownButton>
-      <DropdownMenu>
-        <DropdownMenuItem>Item 1</DropdownMenuItem>
-        <DropdownMenuItem>Item 2</DropdownMenuItem>
-        <DropdownMenuItem>Item 3</DropdownMenuItem>
-      </DropdownMenu>
+      <Dropdown.Button>Dropdown</Dropdown.Button>
+      <Dropdown.Menu>
+        <Dropdown.MenuItem>Item 1</Dropdown.MenuItem>
+        <Dropdown.MenuItem>Item 2</Dropdown.MenuItem>
+        <Dropdown.MenuItem>Item 3</Dropdown.MenuItem>
+      </Dropdown.Menu>
     </Dropdown>
   ),
 };

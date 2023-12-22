@@ -13,44 +13,49 @@ import { Button, type ButtonProps } from "./button";
 
 export type DropdownProps = MenuTriggerProps;
 
-export function Dropdown({
-  children,
-  ...props
-}: React.PropsWithChildren<DropdownProps>) {
+function Dropdown({ children, ...props }: DropdownProps) {
   return <MenuTrigger {...props}>{children}</MenuTrigger>;
 }
+
+Dropdown.displayName = "Dropdown";
 
 // biome-ignore lint/suspicious/noExplicitAny: the underlying component is typed as any
 export type DropdownMenuProps = MenuProps<any>;
 
-export function DropdownMenu({
+Dropdown.Menu = function DropdownMenu({
   children,
   ...props
-}: React.PropsWithChildren<DropdownMenuProps>) {
+}: DropdownMenuProps) {
   return (
     <Popover className="data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2">
       <Menu
-        className="z-50 min-w-[8rem] overflow-hidden rounded-md bg-neutral-100 border border-neutral-200 p-1 text-neutral-950 shadow-md dark:bg-neutral-900 dark:border-neutral-800 dark:text-neutral-50"
+        className="z-50 min-w-[8rem] overflow-hidden rounded-md bg-neutral-100 border border-neutral-200 p-1 text-neutral-950 shadow-md focus-visible:outline-none dark:bg-neutral-900 dark:border-neutral-800 dark:text-neutral-50"
         {...props}
       >
         {children}
       </Menu>
     </Popover>
   );
-}
+};
+
+// @ts-expect-error
+Dropdown.Menu.displayName = "Dropdown.Menu";
 
 export type DropdownButtonProps = ButtonProps;
 
-export function DropdownButton(props: DropdownButtonProps) {
+Dropdown.Button = function DropdownButton(props: DropdownButtonProps) {
   return <Button {...props} />;
-}
+};
+
+// @ts-expect-error
+Dropdown.Button.displayName = "Dropdown.Button";
 
 export type DropdownMenuItemProps = MenuItemProps;
 
-export function DropdownMenuItem({
+Dropdown.MenuItem = function DropdownMenuItem({
   children,
   ...props
-}: React.PropsWithChildren<DropdownMenuItemProps>) {
+}: DropdownMenuItemProps) {
   return (
     <MenuItem
       {...props}
@@ -59,6 +64,13 @@ export function DropdownMenuItem({
       {children}
     </MenuItem>
   );
-}
+};
+
+// @ts-expect-error
+Dropdown.MenuItem.displayName = "Dropdown.MenuItem";
 
 export type DropdownMenuItemKey = Key;
+
+Dropdown.Skeleton = Button.Skeleton;
+
+export { Dropdown };
