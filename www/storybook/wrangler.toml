@@ -1,0 +1,12 @@
+name = "cloudmix-ui-storybook"
+main = "src/worker.ts"
+compatibility_date = "2023-10-30"
+
+workers_dev = false
+route = { pattern = "ui.cloudmix.dev/*", zone_name = "cloudmix.dev" }
+
+[site]
+bucket = "./storybook-static"
+
+[build]
+command = "pnpm build"

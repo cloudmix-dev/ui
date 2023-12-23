@@ -59,3 +59,6 @@ yarn-error.log*
 
 # Expo
 .expo
+
+# Storybook
+storybook-static
