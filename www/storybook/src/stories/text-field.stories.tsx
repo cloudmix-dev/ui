@@ -27,30 +27,40 @@ export const Default = {
 export const WithLabel = {
   args: {
     label: "Text Field",
+    description: "",
     placeholder: "Text field...",
+    isRequired: false,
+    isDisabled: false,
   },
 };
 
 export const WithDescription = {
   args: {
+    label: "",
     description: "This is a text field",
     placeholder: "Text field...",
+    isRequired: false,
+    isDisabled: false,
   },
 };
 
 export const Required = {
   args: {
     label: "Text Field",
-    isRequired: true,
+    description: "",
     placeholder: "Text field...",
+    isRequired: true,
+    isDisabled: false,
   },
 };
 
 export const Disabled = {
   args: {
-    label: "Text Field",
-    isDisabled: true,
+    label: "",
+    description: "",
     placeholder: "Text field...",
+    isRequired: false,
+    isDisabled: true,
   },
 };
 

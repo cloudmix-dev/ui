@@ -21,7 +21,7 @@ export default meta;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Default = {
   args: {
-    variant: undefined,
+    variant: "secondary",
     children: "Default button",
     size: "default",
   },
@@ -85,7 +85,7 @@ export const Link = {
 
 export const Small = {
   args: {
-    variant: undefined,
+    variant: "secondary",
     size: "sm",
     children: "Small button",
   },
@@ -93,7 +93,7 @@ export const Small = {
 
 export const Large = {
   args: {
-    variant: undefined,
+    variant: "secondary",
     size: "lg",
     children: "Large button",
   },

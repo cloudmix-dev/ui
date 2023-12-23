@@ -25,6 +25,9 @@ export const Default = {
 export const ROOT_DIR = path.resolve(__dirname, "..");
     `,
     language: "typescript",
+    numbers: false,
+    copy: false,
+    fileExplorer: false,
   },
 };
 

@@ -18,6 +18,4 @@ const meta: Meta<typeof ThemeSelector> = {
 
 export default meta;
 
-export const Default = {
-  args: {},
-};
+export const Default = {};
