@@ -17,6 +17,11 @@ import {
 import { Form, type FormProps } from "./components/form";
 import { Logo, type LogoProps } from "./components/logo";
 import {
+  NumberField,
+  type NumberFieldProps,
+  type NumberFieldSkeletonProps,
+} from "./components/number-field";
+import {
   Prose,
   type ProseItemProps,
   type ProseProps,
@@ -40,6 +45,7 @@ export {
   Dropdown,
   Form,
   Logo,
+  NumberField,
   Prose,
   Radio,
   TextField,
@@ -56,6 +62,8 @@ export {
   type DropdownProps,
   type FormProps,
   type LogoProps,
+  type NumberFieldProps,
+  type NumberFieldSkeletonProps,
   type ProseItemProps,
   type ProseProps,
   type RadioGroupProps,
