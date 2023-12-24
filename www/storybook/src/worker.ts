@@ -4,6 +4,10 @@ import {
   type KVNamespace,
   type Request,
 } from "@cloudflare/workers-types";
+// @ts-expect-error
+import manifestJSON from "__STATIC_CONTENT_MANIFEST";
+
+const manifest = JSON.parse(manifestJSON);
 
 interface Env {
   __STATIC_CONTENT: KVNamespace;
@@ -20,6 +24,7 @@ export default {
         },
         {
           ASSET_NAMESPACE: env.__STATIC_CONTENT,
+          ASSET_MANIFEST: manifest,
         },
       );
     } catch (_) {
