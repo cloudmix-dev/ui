@@ -1,5 +1,11 @@
 # @cloudmix-dev/tailwind
 
+## 0.0.9
+
+### Patch Changes
+
+- Release 0.0.9
+
 ## 0.0.8
 
 ### Patch Changes

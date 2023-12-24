@@ -98,7 +98,7 @@ importers:
         specifier: ~0.3.0
         version: 0.3.0
       '@cloudmix-dev/react':
-        specifier: workspace:~0.0.8
+        specifier: workspace:~0.0.9
         version: link:../../packages/react
       '@heroicons/react':
         specifier: ~2.1.1
@@ -114,7 +114,7 @@ importers:
         specifier: ~4.20231218.0
         version: 4.20231218.0
       '@cloudmix-dev/tailwind':
-        specifier: workspace:~0.0.8
+        specifier: workspace:~0.0.9
         version: link:../../packages/tailwind
       '@storybook/addon-essentials':
         specifier: ~7.6.6
