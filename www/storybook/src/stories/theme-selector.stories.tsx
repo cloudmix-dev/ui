@@ -19,3 +19,9 @@ const meta: Meta<typeof ThemeSelector> = {
 export default meta;
 
 export const Default = {};
+
+export const WithLocalStorageKey = {
+  args: {
+    localStorageKey: "theme",
+  },
+};

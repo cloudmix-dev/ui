@@ -7,6 +7,7 @@ import {
   MenuTrigger,
   type MenuTriggerProps,
   Popover,
+  Separator,
 } from "react-aria-components";
 
 import { Button, type ButtonProps } from "./button";
@@ -68,6 +69,15 @@ Dropdown.MenuItem = function DropdownMenuItem({
 
 // @ts-expect-error
 Dropdown.MenuItem.displayName = "Dropdown.MenuItem";
+
+Dropdown.Seperator = function DropdownSeparator() {
+  return (
+    <Separator className="border-b border-b-neutral-200 dark:border-b-neutral-800" />
+  );
+};
+
+// @ts-expect-error
+Dropdown.Seperator.displayName = "Dropdown.Seperator";
 
 export type DropdownMenuItemKey = Key;
 

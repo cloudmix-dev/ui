@@ -27,7 +27,10 @@ import {
   type RadioProps,
 } from "./components/radio";
 import { TextField, type TextFieldProps } from "./components/text-field";
-import { ThemeSelector } from "./components/theme-selector";
+import {
+  ThemeSelector,
+  type ThemeSelectorProps,
+} from "./components/theme-selector";
 
 export {
   Button,
@@ -58,4 +61,5 @@ export {
   type RadioGroupProps,
   type RadioProps,
   type TextFieldProps,
+  type ThemeSelectorProps,
 };
