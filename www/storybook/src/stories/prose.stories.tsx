@@ -21,122 +21,162 @@ export default meta;
 type ProseStory = StoryObj<typeof Prose>;
 
 export const Paragraph: ProseStory = {
-  render: () => (
+  render: (props) => (
     <Prose>
-      <Prose.P>This is a paragraph.</Prose.P>
+      <Prose.P {...props} />
     </Prose>
   ),
+  args: {
+    children: "This is a paragraph.",
+  },
 };
 
 export const Strong: ProseStory = {
-  render: () => (
+  render: (props) => (
     <Prose>
-      <Prose.Strong>This is strong.</Prose.Strong>
+      <Prose.Strong {...props} />
     </Prose>
   ),
+  args: {
+    children: "This is strong.",
+  },
 };
 
 export const Emphasis: ProseStory = {
-  render: () => (
+  render: (props) => (
     <Prose>
-      <Prose.Em>This is emphasised.</Prose.Em>
+      <Prose.Em {...props} />
     </Prose>
   ),
+  args: {
+    children: "This is emphasised.",
+  },
 };
 
 export const Heading1: ProseStory = {
-  render: () => (
+  render: (props) => (
     <Prose>
-      <Prose.H1>This is a level 1 heading.</Prose.H1>
+      <Prose.H1 {...props} />
     </Prose>
   ),
+  args: {
+    children: "This is a level 1 heading.",
+  },
 };
 
 export const Heading2: ProseStory = {
-  render: () => (
+  render: (props) => (
     <Prose>
-      <Prose.H2>This is a level 2 heading.</Prose.H2>
+      <Prose.H2 {...props} />
     </Prose>
   ),
+  args: {
+    children: "This is a level 2 heading.",
+  },
 };
 
 export const Heading3: ProseStory = {
-  render: () => (
+  render: (props) => (
     <Prose>
-      <Prose.H3>This is a level 3 heading.</Prose.H3>
+      <Prose.H3 {...props} />
     </Prose>
   ),
+  args: {
+    children: "This is a level 3 heading.",
+  },
 };
 
 export const Heading4: ProseStory = {
-  render: () => (
+  render: (props) => (
     <Prose>
-      <Prose.H4>This is a level 4 heading.</Prose.H4>
+      <Prose.H4 {...props} />
     </Prose>
   ),
+  args: {
+    children: "This is a level 4 heading.",
+  },
 };
 
 export const UnorderedList: ProseStory = {
-  render: () => (
+  render: (props) => (
     <Prose>
-      <Prose.UL>
+      <Prose.UL {...props}>
         <Prose.LI>List item 1</Prose.LI>
         <Prose.LI>List item 2</Prose.LI>
         <Prose.LI>List item 3</Prose.LI>
       </Prose.UL>
     </Prose>
   ),
+  args: {},
 };
 
 export const OrderedList: ProseStory = {
-  render: () => (
+  render: (props) => (
     <Prose>
-      <Prose.OL>
+      <Prose.OL {...props}>
         <Prose.LI>List item 1</Prose.LI>
         <Prose.LI>List item 2</Prose.LI>
         <Prose.LI>List item 3</Prose.LI>
       </Prose.OL>
     </Prose>
   ),
+  args: {},
 };
 
 export const Blockquote: ProseStory = {
-  render: () => (
+  render: (props) => (
     <Prose>
-      <Prose.Blockquote>This is a block quote.</Prose.Blockquote>
+      <Prose.Blockquote {...props} />
     </Prose>
   ),
+
+  args: {
+    children: "This is a block quote.",
+  },
 };
+
 export const Small: ProseStory = {
-  render: () => (
+  render: (props) => (
     <Prose size="sm">
-      <Prose.P>This is a paragraph.</Prose.P>
+      <Prose.P {...props} />
     </Prose>
   ),
+  args: {
+    children: "This is a paragraph.",
+  },
 };
 
 export const Large: ProseStory = {
-  render: () => (
+  render: (props) => (
     <Prose size="lg">
-      <Prose.P>This is a paragraph.</Prose.P>
+      <Prose.P {...props} />
     </Prose>
   ),
+  args: {
+    children: "This is a paragraph.",
+  },
 };
 
 export const ExtraLarge: ProseStory = {
-  render: () => (
+  render: (props) => (
     <Prose size="xl">
-      <Prose.P>This is a paragraph.</Prose.P>
+      <Prose.P {...props} />
     </Prose>
   ),
+  args: {
+    children: "This is a paragraph.",
+  },
 };
 
 export const ExtraExtraLarge: ProseStory = {
-  render: () => (
+  render: (props) => (
     <Prose size="2xl">
-      <Prose.P>This is a paragraph.</Prose.P>
+      <Prose.P {...props} />
     </Prose>
   ),
+  args: {
+    children: "This is a paragraph.",
+  },
 };
 
 type ProseSkeletonStory = StoryObj<typeof Prose.Skeleton>;
