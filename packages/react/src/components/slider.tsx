@@ -27,7 +27,7 @@ function Slider({ label, ...props }: SliderProps) {
       <SliderTrack className="relative w-full h-7">
         {({ state }) => (
           <>
-            <div className="absolute h-2 top-[50%] translate-y-[-50%] w-full rounded-full bg-neutral-100 border border-neutral-200 dark:bg-neutral-800 dark:border-neutral-700" />
+            <div className="absolute h-2 top-[50%] translate-y-[-50%] w-full rounded-full bg-neutral-100 border border-neutral-200 dark:bg-neutral-900 dark:border-neutral-800" />
             <div
               className="absolute h-2 top-[50%] translate-y-[-50%] rounded-full bg-brand-500"
               style={{ width: `${state.getThumbPercent(0) * 100}%` }}

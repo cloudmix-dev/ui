@@ -45,7 +45,7 @@ function NumberField({
           )}
         </Label>
       )}
-      <Group className="flex h-10 w-full text-neutral-950 rounded-md border border-neutral-200 bg-neutral-100 ring-offset-neutral-50 focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 group-data-[disabled=true]:cursor-not-allowed group-data-[disabled=true]:opacity-50 dark:bg-neutral-800 dark:text-neutral-50 dark:border-neutral-700 dark:ring-offset-neutral-950">
+      <Group className="flex h-10 w-full text-neutral-950 rounded-md border border-neutral-200 bg-neutral-100 ring-offset-neutral-50 focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 group-data-[disabled=true]:cursor-not-allowed group-data-[disabled=true]:opacity-50 dark:bg-neutral-900 dark:text-neutral-50 dark:border-neutral-800 dark:ring-offset-neutral-950">
         <Input
           // biome-ignore lint/suspicious/noExplicitAny: mismatched types between the wrapper and the underlying component
           className={(...args: [any]) => {
@@ -61,13 +61,13 @@ function NumberField({
         <div className="shrink-0 flex flex-col">
           <Button
             slot="increment"
-            className="flex justify-center items-center h-5 w-5 border-l border-b border-neutral-200 hover:bg-neutral-200 group-data-[disabled=true]:cursor-not-allowed dark:border-neutral-700 dark:hover:bg-neutral-700"
+            className="flex justify-center items-center h-5 w-5 border-l border-b border-neutral-200 hover:bg-neutral-200 group-data-[disabled=true]:cursor-not-allowed dark:border-neutral-800 dark:hover:bg-neutral-800"
           >
             <PlusIcon className="h-3 w-3" />
           </Button>
           <Button
             slot="decrement"
-            className="flex justify-center items-center h-5 w-5 border-l border-b border-neutral-200 hover:bg-neutral-200 group-data-[disabled=true]:cursor-not-allowed dark:border-neutral-700 dark:hover:bg-neutral-700"
+            className="flex justify-center items-center h-5 w-5 border-l border-b border-neutral-200 hover:bg-neutral-200 group-data-[disabled=true]:cursor-not-allowed dark:border-neutral-800 dark:hover:bg-neutral-800"
           >
             <MinusIcon className="h-3 w-3" />
           </Button>

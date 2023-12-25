@@ -99,6 +99,11 @@ export function config(config?: Config) {
             ".token.unit": teal,
             ".language-css .token.functiont": teal,
             ".token.number": orange,
+            // Temporary override of Sonner styles
+            ".loader": {
+              padding: "0 !important",
+              "box-shadow": "none !important",
+            },
           });
         }),
       ],

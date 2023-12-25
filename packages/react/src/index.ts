@@ -45,6 +45,7 @@ import {
   ThemeSelector,
   type ThemeSelectorProps,
 } from "./components/theme-selector";
+import { Toaster, useToast } from "./components/toasts";
 
 export {
   Button,
@@ -63,6 +64,8 @@ export {
   Tabs,
   TextField,
   ThemeSelector,
+  Toaster,
+  useToast,
   type ButtonProps,
   type CalloutProps,
   type CheckboxGroupProps,

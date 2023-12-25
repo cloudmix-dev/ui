@@ -25,7 +25,7 @@ function Progress({ label, ...props }: ProgressProps) {
               {valueText}
             </span>
           </div>
-          <div className="relative h-2 w-full overflow-hidden rounded-full bg-neutral-100 border border-neutral-200 dark:bg-neutral-800 dark:border-neutral-700">
+          <div className="relative h-2 w-full overflow-hidden rounded-full bg-neutral-100 border border-neutral-200 dark:bg-neutral-900 dark:border-neutral-800">
             <div
               className="h-full w-full flex-1 bg-brand-500 transition-all"
               style={{ width: `${percentage}%` }}
