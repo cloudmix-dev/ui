@@ -18,9 +18,9 @@ const meta: Meta<typeof Radio> = {
 
 export default meta;
 
-type CheckboxStory = StoryObj<typeof Radio.Group>;
+type RadioStory = StoryObj<typeof Radio.Group>;
 
-export const Default: CheckboxStory = {
+export const Default: RadioStory = {
   render: (props) => (
     <Radio.Group {...props}>
       <Radio value="1" label="Item 1" />

@@ -111,4 +111,7 @@ NumberField.Skeleton = function NumberFieldSkeleton({
   );
 };
 
+// @ts-expect-error
+NumberField.Skeleton.displayName = "NumberField.Skeleton";
+
 export { NumberField };

@@ -67,5 +67,9 @@ export const Disabled = {
 type SkeletonStory = StoryObj<typeof NumberField.Skeleton>;
 
 export const Skeleton: SkeletonStory = {
-  render: () => <NumberField.Skeleton label description />,
+  render: (props) => <NumberField.Skeleton {...props} />,
+  args: {
+    label: true,
+    description: true,
+  },
 };

@@ -91,4 +91,7 @@ TextField.Skeleton = function TextFieldSkeleton({
   );
 };
 
+// @ts-expect-error
+TextField.Skeleton.displayName = "TextField.Skeleton";
+
 export { TextField };

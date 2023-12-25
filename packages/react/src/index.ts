@@ -21,16 +21,17 @@ import {
   type NumberFieldProps,
   type NumberFieldSkeletonProps,
 } from "./components/number-field";
-import {
-  Prose,
-  type ProseItemProps,
-  type ProseProps,
-} from "./components/prose";
+import { Prose, type ProseProps } from "./components/prose";
 import {
   Radio,
   type RadioGroupProps,
   type RadioProps,
 } from "./components/radio";
+import { Slider, type SliderProps } from "./components/slider";
+import {
+  TableOfContents,
+  type TableOfContentsProps,
+} from "./components/table-of-contents";
 import { TextField, type TextFieldProps } from "./components/text-field";
 import {
   ThemeSelector,
@@ -48,6 +49,8 @@ export {
   NumberField,
   Prose,
   Radio,
+  Slider,
+  TableOfContents,
   TextField,
   ThemeSelector,
   type ButtonProps,
@@ -64,10 +67,11 @@ export {
   type LogoProps,
   type NumberFieldProps,
   type NumberFieldSkeletonProps,
-  type ProseItemProps,
   type ProseProps,
   type RadioGroupProps,
   type RadioProps,
+  type SliderProps,
+  type TableOfContentsProps,
   type TextFieldProps,
   type ThemeSelectorProps,
 };

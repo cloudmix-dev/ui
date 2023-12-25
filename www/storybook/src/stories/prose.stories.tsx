@@ -23,7 +23,7 @@ type ProseStory = StoryObj<typeof Prose>;
 export const Paragraph: ProseStory = {
   render: (props) => (
     <Prose>
-      <Prose.P {...props} />
+      <p {...props} />
     </Prose>
   ),
   args: {
@@ -34,7 +34,7 @@ export const Paragraph: ProseStory = {
 export const Strong: ProseStory = {
   render: (props) => (
     <Prose>
-      <Prose.Strong {...props} />
+      <strong {...props} />
     </Prose>
   ),
   args: {
@@ -45,7 +45,7 @@ export const Strong: ProseStory = {
 export const Emphasis: ProseStory = {
   render: (props) => (
     <Prose>
-      <Prose.Em {...props} />
+      <em {...props} />
     </Prose>
   ),
   args: {
@@ -56,7 +56,7 @@ export const Emphasis: ProseStory = {
 export const Heading1: ProseStory = {
   render: (props) => (
     <Prose>
-      <Prose.H1 {...props} />
+      <h1 {...props} />
     </Prose>
   ),
   args: {
@@ -67,7 +67,7 @@ export const Heading1: ProseStory = {
 export const Heading2: ProseStory = {
   render: (props) => (
     <Prose>
-      <Prose.H2 {...props} />
+      <h2 {...props} />
     </Prose>
   ),
   args: {
@@ -78,7 +78,7 @@ export const Heading2: ProseStory = {
 export const Heading3: ProseStory = {
   render: (props) => (
     <Prose>
-      <Prose.H3 {...props} />
+      <h3 {...props} />
     </Prose>
   ),
   args: {
@@ -89,7 +89,7 @@ export const Heading3: ProseStory = {
 export const Heading4: ProseStory = {
   render: (props) => (
     <Prose>
-      <Prose.H4 {...props} />
+      <h4 {...props} />
     </Prose>
   ),
   args: {
@@ -100,11 +100,11 @@ export const Heading4: ProseStory = {
 export const UnorderedList: ProseStory = {
   render: (props) => (
     <Prose>
-      <Prose.UL {...props}>
-        <Prose.LI>List item 1</Prose.LI>
-        <Prose.LI>List item 2</Prose.LI>
-        <Prose.LI>List item 3</Prose.LI>
-      </Prose.UL>
+      <ul {...props}>
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+      </ul>
     </Prose>
   ),
   args: {},
@@ -113,11 +113,11 @@ export const UnorderedList: ProseStory = {
 export const OrderedList: ProseStory = {
   render: (props) => (
     <Prose>
-      <Prose.OL {...props}>
-        <Prose.LI>List item 1</Prose.LI>
-        <Prose.LI>List item 2</Prose.LI>
-        <Prose.LI>List item 3</Prose.LI>
-      </Prose.OL>
+      <ol {...props}>
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+      </ol>
     </Prose>
   ),
   args: {},
@@ -126,7 +126,9 @@ export const OrderedList: ProseStory = {
 export const Blockquote: ProseStory = {
   render: (props) => (
     <Prose>
-      <Prose.Blockquote {...props} />
+      <blockquote>
+        <p {...props} />
+      </blockquote>
     </Prose>
   ),
 
@@ -138,7 +140,7 @@ export const Blockquote: ProseStory = {
 export const Small: ProseStory = {
   render: (props) => (
     <Prose size="sm">
-      <Prose.P {...props} />
+      <p {...props} />
     </Prose>
   ),
   args: {
@@ -149,7 +151,7 @@ export const Small: ProseStory = {
 export const Large: ProseStory = {
   render: (props) => (
     <Prose size="lg">
-      <Prose.P {...props} />
+      <p {...props} />
     </Prose>
   ),
   args: {
@@ -160,7 +162,7 @@ export const Large: ProseStory = {
 export const ExtraLarge: ProseStory = {
   render: (props) => (
     <Prose size="xl">
-      <Prose.P {...props} />
+      <p {...props} />
     </Prose>
   ),
   args: {
@@ -171,7 +173,7 @@ export const ExtraLarge: ProseStory = {
 export const ExtraExtraLarge: ProseStory = {
   render: (props) => (
     <Prose size="2xl">
-      <Prose.P {...props} />
+      <p {...props} />
     </Prose>
   ),
   args: {
