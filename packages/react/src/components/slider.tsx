@@ -15,9 +15,13 @@ function Slider({ label, ...props }: SliderProps) {
   return (
     <BaseSlider {...props}>
       <div className="flex justify-between">
-        <Label className="text-sm text-neutral-950 dark:text-neutral-50">
-          {label}
-        </Label>
+        {label ? (
+          <Label className="text-sm text-neutral-950 dark:text-neutral-50">
+            {label}
+          </Label>
+        ) : (
+          <div />
+        )}
         <SliderOutput className="text-sm text-neutral-950 dark:text-neutral-50" />
       </div>
       <SliderTrack className="relative w-full h-7">

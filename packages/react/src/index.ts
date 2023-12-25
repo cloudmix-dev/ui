@@ -21,6 +21,7 @@ import {
   type NumberFieldProps,
   type NumberFieldSkeletonProps,
 } from "./components/number-field";
+import { Progress, type ProgressProps } from "./components/progress";
 import { Prose, type ProseProps } from "./components/prose";
 import {
   Radio,
@@ -32,6 +33,13 @@ import {
   TableOfContents,
   type TableOfContentsProps,
 } from "./components/table-of-contents";
+import {
+  Tabs,
+  type TabsButtonProps,
+  type TabsListProps,
+  type TabsPanelProps,
+  type TabsProps,
+} from "./components/tabs";
 import { TextField, type TextFieldProps } from "./components/text-field";
 import {
   ThemeSelector,
@@ -47,10 +55,12 @@ export {
   Form,
   Logo,
   NumberField,
+  Progress,
   Prose,
   Radio,
   Slider,
   TableOfContents,
+  Tabs,
   TextField,
   ThemeSelector,
   type ButtonProps,
@@ -67,11 +77,16 @@ export {
   type LogoProps,
   type NumberFieldProps,
   type NumberFieldSkeletonProps,
+  type ProgressProps,
   type ProseProps,
   type RadioGroupProps,
   type RadioProps,
   type SliderProps,
   type TableOfContentsProps,
+  type TabsButtonProps,
+  type TabsListProps,
+  type TabsPanelProps,
+  type TabsProps,
   type TextFieldProps,
   type ThemeSelectorProps,
 };
