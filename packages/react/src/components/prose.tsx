@@ -1,5 +1,5 @@
 import { type VariantProps, cva } from "class-variance-authority";
-import cn from "classnames";
+import { cn } from "../utils";
 
 const proseVariants = cva("prose dark:prose-invert", {
   variants: {

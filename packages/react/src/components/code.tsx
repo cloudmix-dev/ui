@@ -2,9 +2,9 @@ import {
   ClipboardDocumentCheckIcon,
   ClipboardIcon,
 } from "@heroicons/react/24/solid";
-import cn from "classnames";
 import { Highlight } from "prism-react-renderer";
 import { Fragment, useState } from "react";
+import { cn } from "../utils";
 
 export interface CodeProps {
   content: string;

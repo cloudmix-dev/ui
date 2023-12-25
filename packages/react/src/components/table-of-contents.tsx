@@ -1,6 +1,6 @@
 import { slugifyWithCounter } from "@sindresorhus/slugify";
-import cn from "classnames";
 import { useCallback, useEffect, useState } from "react";
+import { cn } from "../utils";
 
 interface TOCNode {
   id: string;

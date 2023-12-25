@@ -1,11 +1,11 @@
 import { CheckIcon } from "@heroicons/react/16/solid";
-import cn from "classnames";
 import {
   Checkbox as BaseCheckbox,
   CheckboxGroup as BaseCheckboxGroup,
   type CheckboxGroupProps as BaseCheckboxGroupProps,
   type CheckboxProps as BaseCheckboxProps,
 } from "react-aria-components";
+import { cn } from "../utils";
 
 export interface CheckboxProps extends Omit<BaseCheckboxProps, "children"> {
   label: string;

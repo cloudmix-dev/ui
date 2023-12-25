@@ -1,5 +1,5 @@
 import { type VariantProps, cva } from "class-variance-authority";
-import cn from "classnames";
+import { cn } from "../utils";
 
 const calloutVariants = cva("", {
   variants: {

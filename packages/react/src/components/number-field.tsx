@@ -1,5 +1,4 @@
 import { MinusIcon, PlusIcon } from "@heroicons/react/16/solid";
-import cn from "classnames";
 import {
   Button,
   FieldError,
@@ -10,6 +9,7 @@ import {
   type NumberFieldProps as BaseNumberFieldProps,
   Text,
 } from "react-aria-components";
+import { cn } from "../utils";
 
 export interface NumberFieldProps extends BaseNumberFieldProps {
   description?: string;
