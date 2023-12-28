@@ -9,6 +9,7 @@ import {
   type NumberFieldProps as BaseNumberFieldProps,
   Text,
 } from "react-aria-components";
+
 import { cn } from "../utils";
 
 export interface NumberFieldProps extends BaseNumberFieldProps {

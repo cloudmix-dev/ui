@@ -1,3 +1,8 @@
+import {
+  Avatar,
+  type AvatarGroupProps,
+  type AvatarProps,
+} from "./components/avatar";
 import { Button, type ButtonProps } from "./components/button";
 import { Callout, type CalloutProps } from "./components/callout";
 import {
@@ -28,6 +33,12 @@ import {
   type RadioGroupProps,
   type RadioProps,
 } from "./components/radio";
+import {
+  Resizable,
+  type ResizableHandleProps,
+  type ResizablePanelProps,
+  type ResizableProps,
+} from "./components/resizable";
 import { Slider, type SliderProps } from "./components/slider";
 import {
   TableOfContents,
@@ -48,6 +59,7 @@ import {
 import { Toaster, useToast } from "./components/toasts";
 
 export {
+  Avatar,
   Button,
   Callout,
   Checkbox,
@@ -59,6 +71,7 @@ export {
   Progress,
   Prose,
   Radio,
+  Resizable,
   Slider,
   TableOfContents,
   Tabs,
@@ -66,6 +79,8 @@ export {
   ThemeSelector,
   Toaster,
   useToast,
+  type AvatarGroupProps,
+  type AvatarProps,
   type ButtonProps,
   type CalloutProps,
   type CheckboxGroupProps,
@@ -84,6 +99,9 @@ export {
   type ProseProps,
   type RadioGroupProps,
   type RadioProps,
+  type ResizableHandleProps,
+  type ResizablePanelProps,
+  type ResizableProps,
   type SliderProps,
   type TableOfContentsProps,
   type TabsButtonProps,

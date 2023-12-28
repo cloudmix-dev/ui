@@ -1,5 +1,6 @@
 import { type VariantProps, cva } from "class-variance-authority";
 import { Text } from "react-aria-components";
+
 import { cn } from "../utils";
 
 const logoVariants = cva("font-display font-black uppercase leading-none", {

@@ -8,6 +8,7 @@ import {
   Tabs as BaseTabs,
   type TabsProps as BaseTabsProps,
 } from "react-aria-components";
+
 import { cn } from "../utils";
 
 export type TabsProps = BaseTabsProps;
