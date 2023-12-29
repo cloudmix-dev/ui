@@ -1,5 +1,11 @@
 # @cloudmix-dev/tailwind
 
+## 0.0.14
+
+### Patch Changes
+
+- 2e07074: Release 0.0.14
+
 ## 0.0.13
 
 ## 0.0.12
