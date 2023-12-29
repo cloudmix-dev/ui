@@ -23,6 +23,9 @@
     "prepare": "npm run build",
     "tsc": "tsc"
   },
+  "keywords": ["tailwindcss", "config"],
+  "author": "samuel.laycock@cloudmix.dev",
+  "license": "MIT",
   "dependencies": {
     "@tailwindcss/container-queries": "~0.1.1",
     "@tailwindcss/typography": "~0.5.10",

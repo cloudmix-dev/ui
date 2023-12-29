@@ -23,6 +23,9 @@
     "prepare": "npm run build",
     "tsc": "tsc"
   },
+  "keywords": ["react", "ui", "library", "components", "design", "system"],
+  "author": "samuel.laycock@cloudmix.dev",
+  "license": "MIT",
   "dependencies": {
     "@heroicons/react": "~2.1.1",
     "@sindresorhus/slugify": "~2.2.1",
