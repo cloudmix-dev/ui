@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "publish": "changeset publish",
+    "version": "changeset version && pnpm i --fix-lockfile",
     "postinstall": "npx husky install"
   },
   "author": "samuel.laycock@cloudmix.dev",
