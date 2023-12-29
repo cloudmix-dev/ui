@@ -1,5 +1,11 @@
 # @cloudmix-dev/react
 
+## 0.0.11
+
+### Patch Changes
+
+- f7b9840: Update package licenses
+
 ## 0.0.10
 
 ### Patch Changes

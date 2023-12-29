@@ -1,6 +1,6 @@
 {
   "name": "@cloudmix-dev/react",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.es.mjs",
   "types": "./dist/index.d.ts",
@@ -16,14 +16,23 @@
       }
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "sideEffects": false,
   "scripts": {
     "build": "vite build",
     "prepare": "npm run build",
     "tsc": "tsc"
   },
-  "keywords": ["react", "ui", "library", "components", "design", "system"],
+  "keywords": [
+    "react",
+    "ui",
+    "library",
+    "components",
+    "design",
+    "system"
+  ],
   "author": "samuel.laycock@cloudmix.dev",
   "license": "MIT",
   "dependencies": {
