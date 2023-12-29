@@ -31,7 +31,7 @@ jobs:
       - name: Create PR or publish
         uses: changesets/action@v1
         with:
-          publish: pnpm publish --access public
+          publish: pnpm publish -r --access public
           commit: "chore: publish"
           title: Publish new version
         env:

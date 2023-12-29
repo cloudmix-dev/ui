@@ -4,7 +4,7 @@
   "commit": false,
   "fixed": [["@cloudmix-dev/*"]],
   "linked": [],
-  "access": "restricted",
+  "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
   "ignore": ["@cloudmix-dev/storybook"]
