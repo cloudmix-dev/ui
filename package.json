@@ -2,6 +2,7 @@
   "name": "ui",
   "private": true,
   "scripts": {
+    "publish": "changeset publish",
     "postinstall": "npx husky install"
   },
   "keywords": [],
