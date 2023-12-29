@@ -5,9 +5,8 @@
     "publish": "changeset publish",
     "postinstall": "npx husky install"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "samuel.laycock@cloudmix.dev",
+  "license": "MIT",
   "devDependencies": {
     "@biomejs/biome": "~1.4.1",
     "@changesets/cli": "~2.27.1",
