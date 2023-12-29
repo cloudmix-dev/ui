@@ -41,7 +41,7 @@ export function config(config?: Config) {
         plugin(({ addComponents }) => {
           const text = {
             color: colors.zinc[50],
-            fontFamilt: ["Source Code Pro", ...defaultTheme.fontFamily.mono],
+            fontFamily: ["Source Code Pro", ...defaultTheme.fontFamily.mono],
           };
           const muted = {
             color: colors.zinc[300],
