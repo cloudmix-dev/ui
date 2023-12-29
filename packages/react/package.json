@@ -1,9 +1,6 @@
 {
   "name": "@cloudmix-dev/react",
   "version": "0.0.10",
-  "files": [
-    "dist"
-  ],
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.es.mjs",
   "types": "./dist/index.d.ts",
@@ -19,11 +16,12 @@
       }
     }
   },
+  "files": ["dist"],
+  "sideEffects": false,
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "prepare": "npm run build"
+    "build": "vite build",
+    "prepare": "npm run build",
+    "tsc": "tsc"
   },
   "dependencies": {
     "@heroicons/react": "~2.1.1",
