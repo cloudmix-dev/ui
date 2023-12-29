@@ -1,6 +1,6 @@
 {
   "name": "@cloudmix-dev/tailwind",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.es.mjs",
   "types": "./dist/index.d.ts",
@@ -16,14 +16,19 @@
       }
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "sideEffects": false,
   "scripts": {
     "build": "vite build",
     "prepare": "npm run build",
     "tsc": "tsc"
   },
-  "keywords": ["tailwindcss", "config"],
+  "keywords": [
+    "tailwindcss",
+    "config"
+  ],
   "author": "samuel.laycock@cloudmix.dev",
   "license": "MIT",
   "dependencies": {
