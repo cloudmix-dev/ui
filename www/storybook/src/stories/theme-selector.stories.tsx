@@ -18,10 +18,23 @@ const meta: Meta<typeof ThemeSelector> = {
 
 export default meta;
 
-export const Default = {};
+export const Default = {
+  args: {
+    cookie: "",
+    localStorageKey: "",
+  },
+};
 
 export const WithLocalStorageKey = {
   args: {
+    cookie: "",
     localStorageKey: "theme",
+  },
+};
+
+export const WithCookie = {
+  args: {
+    cookie: "_theme",
+    localStorageKey: "",
   },
 };
