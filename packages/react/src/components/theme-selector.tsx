@@ -18,10 +18,11 @@ function getThemePreference(key?: string): Theme {
 }
 
 export interface ThemeSelectorProps {
+  cookie?: string;
   localStorageKey?: string;
 }
 
-function ThemeSelector({ localStorageKey }: ThemeSelectorProps) {
+function ThemeSelector({ cookie, localStorageKey }: ThemeSelectorProps) {
   const [theme, setTheme] = useState<Theme>(
     getThemePreference(localStorageKey),
   );
@@ -30,6 +31,10 @@ function ThemeSelector({ localStorageKey }: ThemeSelectorProps) {
 
     if (localStorageKey) {
       window.localStorage.setItem(localStorageKey, theme.toString());
+    }
+
+    if (cookie) {
+      document.cookie = `${cookie}=${theme.toString()};path=/`;
     }
   };
 
