@@ -19,10 +19,15 @@ function getThemePreference(key?: string): Theme {
 
 export interface ThemeSelectorProps {
   cookie?: string;
+  cookieMaxAge?: number;
   localStorageKey?: string;
 }
 
-function ThemeSelector({ cookie, localStorageKey }: ThemeSelectorProps) {
+function ThemeSelector({
+  cookie,
+  cookieMaxAge = 31536000,
+  localStorageKey,
+}: ThemeSelectorProps) {
   const [theme, setTheme] = useState<Theme>(
     getThemePreference(localStorageKey),
   );
@@ -34,7 +39,7 @@ function ThemeSelector({ cookie, localStorageKey }: ThemeSelectorProps) {
     }
 
     if (cookie) {
-      document.cookie = `${cookie}=${theme.toString()};path=/`;
+      document.cookie = `${cookie}=${theme.toString()};path=/;max-age=${cookieMaxAge};`;
     }
   };
 
