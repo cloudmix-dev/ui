@@ -1,4 +1,9 @@
 import {
+  AppShell,
+  type AppShellNavigationLinkProps,
+  type AppShellProps,
+} from "./components/app-shell";
+import {
   Avatar,
   type AvatarGroupProps,
   type AvatarProps,
@@ -59,6 +64,7 @@ import {
 import { Toaster, useToast } from "./components/toasts";
 
 export {
+  AppShell,
   Avatar,
   Button,
   Callout,
@@ -79,6 +85,8 @@ export {
   ThemeSelector,
   Toaster,
   useToast,
+  type AppShellNavigationLinkProps,
+  type AppShellProps,
   type AvatarGroupProps,
   type AvatarProps,
   type ButtonProps,
