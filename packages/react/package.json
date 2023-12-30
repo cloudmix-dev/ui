@@ -36,6 +36,7 @@
   "author": "samuel.laycock@cloudmix.dev",
   "license": "MIT",
   "dependencies": {
+    "@headlessui/react": "~1.7.17",
     "@heroicons/react": "~2.1.1",
     "@sindresorhus/slugify": "~2.2.1",
     "class-variance-authority": "~0.7.0",
