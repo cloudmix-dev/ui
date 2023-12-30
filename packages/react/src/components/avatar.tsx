@@ -74,4 +74,21 @@ Avatar.Group = function AvatarGroup({ children, className }: AvatarGroupProps) {
 // @ts-expect-error
 Avatar.Group.displayName = "Avatar.Group";
 
+export interface AvatarSkeletonProps
+  extends VariantProps<typeof avatarVariants> {
+  className?: string;
+}
+
+Avatar.Skeleton = function AvatarSkeleton({
+  className,
+  size,
+}: AvatarSkeletonProps) {
+  return (
+    <div className={cn("animate-pulse", avatarVariants({ size, className }))} />
+  );
+};
+
+// @ts-expect-error
+Avatar.Skeleton.displayName = "Avatar.Skeleton";
+
 export { Avatar };

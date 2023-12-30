@@ -86,3 +86,12 @@ export const Group: AvatarGroupStory = {
     </Avatar.Group>
   ),
 };
+
+type SkeletonStory = StoryObj<typeof Avatar.Skeleton>;
+
+export const Skeleton: SkeletonStory = {
+  render: (props) => <Avatar.Skeleton {...props} />,
+  args: {
+    size: "default",
+  },
+};
