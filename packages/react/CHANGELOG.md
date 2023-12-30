@@ -1,5 +1,15 @@
 # @cloudmix-dev/react
 
+## 0.0.15
+
+### Patch Changes
+
+- 7bc4ce4: Ensure Prism styles aren't stripped from Tailwind output
+- 78712ff: Fix TextField and NumberField className support and prop interfaces
+- 307bdaf: Fix Code component rendering within Prose component
+- dbf4578: Add AppShell component
+- 194723f: Add Skeleton for Avatar component
+
 ## 0.0.14
 
 ## 0.0.13
