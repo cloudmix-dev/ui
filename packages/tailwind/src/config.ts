@@ -13,6 +13,11 @@ export function config(config?: Config) {
         "./node_modules/@cloudmix-dev/react/**/*.js",
         "./src/**/*.{astro,html,md,mdx,tsx}",
       ],
+      safelist: [
+        {
+          pattern: /(token|loader|language-)/,
+        },
+      ],
       darkMode: "class",
       theme: {
         colors: {
@@ -97,7 +102,7 @@ export function config(config?: Config) {
             ".token.punctuation": dark,
             ".token.attr-equals": dark,
             ".token.unit": teal,
-            ".language-css .token.functiont": teal,
+            ".language-css .token.function": teal,
             ".token.number": orange,
             // Temporary override of Sonner styles
             ".loader": {
