@@ -112,8 +112,8 @@ function AppShell({
           </div>
         </div>
       )}
-      <div className={cn(renderNav && "lg:pl-72")}>
-        <div className="sticky top-0 z-40 flex h-16 shrink-0 items-center gap-x-4 border-b border-neutral-200 bg-neutral-50 text-neutral-950 px-4 dark:bg-neutral-950 dark:text-neutral-50 dark:border-neutral-800">
+      <div className={cn("relative h-full max-h-full", hasNav && "lg:ml-72")}>
+        <div className="absolute top-0 left-0 w-full z-40 flex h-16 items-center gap-x-4 border-b border-neutral-200 bg-neutral-50 text-neutral-950 px-4 dark:bg-neutral-950 dark:text-neutral-50 dark:border-neutral-800">
           {hasNav && (
             <button
               type="button"
@@ -137,8 +137,10 @@ function AppShell({
             </div>
           )}
         </div>
-        <main className="py-10">
-          <div className="px-4 sm:px-6 lg:px-8">{children}</div>
+        <main className="h-full max-h-full pt-16 overflow-hidden">
+          <div className="h-full max-h-full p-4 overflow-scroll">
+            {children}
+          </div>
         </main>
       </div>
     </div>
