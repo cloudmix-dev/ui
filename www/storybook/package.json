@@ -10,14 +10,14 @@
   },
   "dependencies": {
     "@cloudflare/kv-asset-handler": "~0.3.0",
-    "@cloudmix-dev/react": "workspace:~0.0.15",
+    "@cloudmix-dev/react": "workspace:~0.0.16",
     "@heroicons/react": "~2.1.1",
     "react": "~18.2.0",
     "react-dom": "~18.2.0"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "~4.20231218.0",
-    "@cloudmix-dev/tailwind": "workspace:~0.0.15",
+    "@cloudmix-dev/tailwind": "workspace:~0.0.16",
     "@storybook/addon-essentials": "~7.6.6",
     "@storybook/addon-interactions": "~7.6.6",
     "@storybook/addon-links": "~7.6.6",

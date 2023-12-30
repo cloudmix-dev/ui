@@ -1,5 +1,11 @@
 # @cloudmix-dev/react
 
+## 0.0.16
+
+### Patch Changes
+
+- e3691b2: Fix AppShell component layout
+
 ## 0.0.15
 
 ### Patch Changes
