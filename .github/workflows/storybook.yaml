@@ -6,6 +6,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - www/storybook/**
   workflow_dispatch:
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
