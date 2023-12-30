@@ -1,6 +1,7 @@
 import {
   FieldError,
   Input,
+  type InputProps as BaseInputProps,
   Label,
   Text,
   TextField as BaseTextField,
@@ -9,7 +10,24 @@ import {
 
 import { cn } from "../utils";
 
-export interface TextFieldProps extends BaseTextFieldProps {
+export interface TextFieldProps
+  extends Omit<
+      BaseInputProps,
+      | "children"
+      | "className"
+      | "defaultValue"
+      | "onBlur"
+      | "onChange"
+      | "onFocus"
+      | "onKeyDown"
+      | "onKeyUp"
+      | "slot"
+      | "step"
+      | "style"
+      | "type"
+      | "value"
+    >,
+    BaseTextFieldProps {
   description?: string;
   label?: string;
 }
@@ -24,7 +42,12 @@ function TextField({
   return (
     <BaseTextField
       {...props}
-      className="flex flex-col space-y-2"
+      className={(...args) => {
+        const classNameResult =
+          typeof className === "function" ? className(...args) : className;
+
+        return cn("flex flex-col space-y-2", classNameResult);
+      }}
       isRequired={isRequired}
     >
       {label && (
@@ -43,17 +66,7 @@ function TextField({
           )}
         </Label>
       )}
-      <Input
-        className={(...args) => {
-          const classNameResult =
-            typeof className === "function" ? className(...args) : className;
-
-          return cn(
-            "flex h-10 w-full rounded-md border border-neutral-200 bg-neutral-100 px-3 py-2 text-sm ring-offset-neutral-50 placeholder:text-neutral-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-neutral-900 dark:border-neutral-800 dark:ring-offset-neutral-950 dark:placeholder:text-neutral-400",
-            classNameResult,
-          );
-        }}
-      />
+      <Input className="flex h-10 w-full rounded-md border border-neutral-200 bg-neutral-100 px-3 py-2 text-sm ring-offset-neutral-50 placeholder:text-neutral-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-neutral-900 dark:border-neutral-800 dark:ring-offset-neutral-950 dark:placeholder:text-neutral-400" />
       {description && (
         <Text
           slot="description"

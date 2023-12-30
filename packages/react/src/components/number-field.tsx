@@ -4,6 +4,7 @@ import {
   FieldError,
   Group,
   Input,
+  type InputProps as BaseInputProps,
   Label,
   NumberField as BaseNumberField,
   type NumberFieldProps as BaseNumberFieldProps,
@@ -12,7 +13,23 @@ import {
 
 import { cn } from "../utils";
 
-export interface NumberFieldProps extends BaseNumberFieldProps {
+export interface NumberFieldProps
+  extends Omit<
+      BaseInputProps,
+      | "children"
+      | "className"
+      | "defaultValue"
+      | "onBlur"
+      | "onChange"
+      | "onFocus"
+      | "onKeyDown"
+      | "onKeyUp"
+      | "slot"
+      | "step"
+      | "style"
+      | "value"
+    >,
+    BaseNumberFieldProps {
   description?: string;
   label?: string;
 }
@@ -27,7 +44,12 @@ function NumberField({
   return (
     <BaseNumberField
       {...props}
-      className="group flex flex-col space-y-2"
+      className={(...args) => {
+        const classNameResult =
+          typeof className === "function" ? className(...args) : className;
+
+        return cn("group flex flex-col space-y-2", classNameResult);
+      }}
       isRequired={isRequired}
     >
       {label && (
@@ -47,18 +69,7 @@ function NumberField({
         </Label>
       )}
       <Group className="flex h-10 w-full text-neutral-950 rounded-md border border-neutral-200 bg-neutral-100 ring-offset-neutral-50 focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 group-data-[disabled=true]:cursor-not-allowed group-data-[disabled=true]:opacity-50 dark:bg-neutral-900 dark:text-neutral-50 dark:border-neutral-800 dark:ring-offset-neutral-950">
-        <Input
-          // biome-ignore lint/suspicious/noExplicitAny: mismatched types between the wrapper and the underlying component
-          className={(...args: [any]) => {
-            const classNameResult =
-              typeof className === "function" ? className(...args) : className;
-
-            return cn(
-              "flex-grow h-full px-3 py-2 bg-transparent text-sm placeholder:text-neutral-500 focus-visible:outline-none group-data-[disabled=true]:cursor-not-allowed dark:placeholder:text-neutral-400",
-              classNameResult,
-            );
-          }}
-        />
+        <Input className="flex-grow h-full px-3 py-2 bg-transparent text-sm placeholder:text-neutral-500 focus-visible:outline-none group-data-[disabled=true]:cursor-not-allowed dark:placeholder:text-neutral-400" />
         <div className="shrink-0 flex flex-col">
           <Button
             slot="increment"
