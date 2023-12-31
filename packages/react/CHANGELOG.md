@@ -1,5 +1,14 @@
 # @cloudmix-dev/react
 
+## 0.0.17
+
+### Patch Changes
+
+- 5d2d6cf: Fix AppShell component types
+- 0e8a96d: Fix text overflow handling in Code component
+- 064215e: Fix scroll highlighting logic for TableOfContents component
+- 4b44e00: Fix SSR rendering in ThemeSelector component
+
 ## 0.0.16
 
 ### Patch Changes
