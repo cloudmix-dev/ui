@@ -58,6 +58,7 @@ import {
 } from "./components/tabs";
 import { TextField, type TextFieldProps } from "./components/text-field";
 import {
+  type Theme,
   ThemeSelector,
   type ThemeSelectorProps,
 } from "./components/theme-selector";
@@ -118,4 +119,5 @@ export {
   type TabsProps,
   type TextFieldProps,
   type ThemeSelectorProps,
+  type Theme,
 };

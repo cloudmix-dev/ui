@@ -7,11 +7,41 @@ import { useEffect, useState } from "react";
 
 import { Dropdown, type DropdownMenuItemKey } from "./dropdown";
 
-type Theme = "light" | "dark" | "system";
+export type Theme = "light" | "dark" | "system";
 
-function getThemePreference(key?: string): Theme {
-  if (key && typeof window !== "undefined") {
-    return (window.localStorage.getItem("theme") ?? "system") as Theme;
+function getThemePreference(localStorageKey?: string): Theme {
+  if (typeof window !== "undefined") {
+    if (localStorageKey) {
+      const localStorageTheme = window.localStorage.getItem(localStorageKey);
+
+      if (localStorageTheme) {
+        return localStorageTheme as Theme;
+      }
+    }
+
+    if (document.cookie) {
+      const cookieTheme = document.cookie
+        .split("; ")
+        .find((row) => row.startsWith("theme="));
+
+      if (cookieTheme) {
+        return cookieTheme.split("=")[1] as Theme;
+      }
+    }
+
+    const isDark = document.documentElement.classList.contains("dark");
+
+    if (isDark) {
+      return "dark";
+    }
+
+    const isLight = document.documentElement.classList.contains("light");
+
+    if (isLight) {
+      return "light";
+    }
+
+    return "system";
   }
 
   return "system";
@@ -20,17 +50,17 @@ function getThemePreference(key?: string): Theme {
 export interface ThemeSelectorProps {
   cookie?: string;
   cookieMaxAge?: number;
+  defaultTheme?: Theme;
   localStorageKey?: string;
 }
 
 function ThemeSelector({
   cookie,
   cookieMaxAge = 31536000,
+  defaultTheme = "system",
   localStorageKey,
 }: ThemeSelectorProps) {
-  const [theme, setTheme] = useState<Theme>(
-    getThemePreference(localStorageKey),
-  );
+  const [theme, setTheme] = useState<Theme>(defaultTheme);
   const onChangeTheme = (theme: DropdownMenuItemKey) => {
     setTheme(theme.toString() as Theme);
 
@@ -44,13 +74,21 @@ function ThemeSelector({
   };
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const isDark =
-        theme === "dark" ||
-        (theme === "system" &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches);
+    setTheme(getThemePreference(localStorageKey));
+  }, [localStorageKey]);
 
-      document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+  useEffect(() => {
+    const isDark =
+      theme === "dark" ||
+      (theme === "system" &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches);
+
+    if (isDark) {
+      document.documentElement.classList.add("dark");
+      document.documentElement.classList.remove("light");
+    } else {
+      document.documentElement.classList.add("light");
+      document.documentElement.classList.remove("dark");
     }
   }, [theme]);
 
@@ -58,10 +96,16 @@ function ThemeSelector({
     <Dropdown>
       <Dropdown.Button size="icon" aria-label="Select theme">
         {theme === "light" && (
-          <SunIcon className="h-6 w-6 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+          <SunIcon
+            className="h-6 w-6 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
+            aria-hidden="true"
+          />
         )}
         {theme === "dark" && (
-          <MoonIcon className="h-6 w-6 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+          <MoonIcon
+            className="h-6 w-6 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
+            aria-hidden="true"
+          />
         )}
         {theme === "system" && <ComputerDesktopIcon className="h-6 w-6" />}
       </Dropdown.Button>
