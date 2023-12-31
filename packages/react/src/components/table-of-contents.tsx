@@ -1,12 +1,13 @@
 import { slugifyWithCounter } from "@sindresorhus/slugify";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import { cn } from "../utils";
+import { Prose } from "./prose";
 
 interface TOCNode {
   id: string;
   children: TOCNode[];
-  type: "h2" | "h3";
+  type: `h${number}`;
   title: string;
 }
 
@@ -14,7 +15,7 @@ function collectHeadings(nodes: TOCNode[], slugify = slugifyWithCounter()) {
   const sections: TOCNode[] = [];
 
   for (const node of nodes) {
-    const id = slugify(node.title);
+    const id = node.id || slugify(node.title);
 
     if (node.type === "h3" && sections[sections.length - 1]) {
       // biome-ignore lint/style/noNonNullAssertion: we know it exists
@@ -27,11 +28,18 @@ function collectHeadings(nodes: TOCNode[], slugify = slugifyWithCounter()) {
   return sections;
 }
 
-function TableOfContentsInner({
-  tableOfContents,
-}: { tableOfContents: TOCNode[] }) {
-  const [currentSection, setCurrentSection] = useState(tableOfContents[0]?.id);
+interface TableOfContentsInnerProps {
+  scrollContainer: HTMLElement | null;
+  scrollOffset?: number;
+  tableOfContents: TOCNode[];
+}
 
+function TableOfContentsInner({
+  scrollContainer,
+  scrollOffset = 64, // 4rem (16 * 4)
+  tableOfContents,
+}: TableOfContentsInnerProps) {
+  const [currentSection, setCurrentSection] = useState(tableOfContents[0]?.id);
   const getHeadings = useCallback((tableOfContents: TOCNode[]) => {
     return tableOfContents
       .flatMap((node) => [node.id, ...node.children.map((child) => child.id)])
@@ -55,34 +63,36 @@ function TableOfContentsInner({
   }, []);
 
   useEffect(() => {
-    if (tableOfContents.length === 0) {
-      return;
-    }
-
-    const headings = getHeadings(tableOfContents);
-
-    function onScroll() {
-      const top = window.scrollY;
-      let current = headings[0]?.id;
-
-      for (const heading of headings) {
-        if (top >= heading.top) {
-          current = heading.id;
-        } else {
-          break;
-        }
+    if (scrollContainer) {
+      if (tableOfContents.length === 0) {
+        return;
       }
 
-      setCurrentSection(current);
+      const headings = getHeadings(tableOfContents);
+
+      function onScroll() {
+        const top = scrollContainer?.scrollTop ?? 0;
+        let current = headings[0]?.id;
+
+        for (const heading of headings) {
+          if (top >= heading.top - scrollOffset) {
+            current = heading.id;
+          } else {
+            break;
+          }
+        }
+
+        setCurrentSection(current);
+      }
+
+      scrollContainer.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+
+      return () => {
+        scrollContainer.removeEventListener("scroll", onScroll);
+      };
     }
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-    };
-  }, [getHeadings, tableOfContents]);
+  }, [scrollContainer, getHeadings, tableOfContents, scrollOffset]);
 
   function isActive(section: TOCNode) {
     if (section.id === currentSection) {
@@ -97,8 +107,8 @@ function TableOfContentsInner({
   }
 
   return (
-    <nav aria-labelledby="on-this-page-title" className="w-56">
-      {tableOfContents.length > 0 && (
+    <>
+      {tableOfContents.length > 0 ? (
         <>
           <h2
             id="on-this-page-title"
@@ -143,36 +153,80 @@ function TableOfContentsInner({
             ))}
           </ol>
         </>
+      ) : (
+        <div className="flex flex-col space-y-6">
+          <div className="w-3/4">
+            <Prose.Skeleton lines={1} />
+          </div>
+          <Prose.Skeleton lines={4} />
+        </div>
       )}
-    </nav>
+    </>
   );
 }
 
 export interface TableOfContentsProps {
-  querySelector?: string;
+  className?: string;
+  contentQuerySelector?: string;
+  maxHeading?: number;
+  minHeading?: number;
+  scrollOffset?: number;
+  scrollQuerySelector?: string;
 }
 
-function TableOfContents({ querySelector = "article" }: TableOfContentsProps) {
+function TableOfContents({
+  className,
+  contentQuerySelector = "article",
+  maxHeading = 3,
+  minHeading = 2,
+  scrollOffset,
+  scrollQuerySelector = contentQuerySelector,
+}: TableOfContentsProps) {
+  const el = useRef<HTMLElement | null>(null);
   const [sections, setSections] = useState<TOCNode[]>([]);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      const contentNodeEl = document.querySelector(querySelector);
-      const nodeEls = contentNodeEl?.querySelectorAll("h2, h3");
+      const contentNodeEl = document.querySelector(contentQuerySelector);
+
+      el.current = scrollQuerySelector
+        ? document.querySelector(scrollQuerySelector)
+        : (contentNodeEl as HTMLElement);
+
+      const nodeEls = contentNodeEl?.querySelectorAll(
+        new Array(maxHeading - minHeading + 1)
+          .fill(0)
+          .map((_, i) => `h${i + minHeading}`)
+          .join(", "),
+      );
       const nodes: TOCNode[] = [];
 
       for (const el of nodeEls ?? []) {
-        const type = el.tagName.toLowerCase() as "h2" | "h3";
+        const type = el.tagName.toLowerCase() as `h${number}`;
         const title = el.textContent ?? "";
 
-        nodes.push({ type, title, id: "", children: [] });
+        nodes.push({ type, title, id: el.id ?? "", children: [] });
       }
 
       setSections(collectHeadings(nodes));
     }
-  }, [querySelector]);
+  }, [contentQuerySelector, maxHeading, minHeading, scrollQuerySelector]);
 
-  return <TableOfContentsInner tableOfContents={sections} />;
+  return (
+    <nav
+      aria-labelledby="on-this-page-title"
+      className={cn(
+        "w-full max-w-[14rem] p-4 rounded-lg border border-neutral-200 dark:border-neutral-800",
+        className,
+      )}
+    >
+      <TableOfContentsInner
+        tableOfContents={sections}
+        scrollContainer={el.current}
+        scrollOffset={scrollOffset}
+      />
+    </nav>
+  );
 }
 
 TableOfContents.displayName = "TableOfContents";
