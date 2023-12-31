@@ -6,7 +6,6 @@ import { cn } from "../utils";
 import { Button } from "./button";
 
 export interface AppShellProps extends React.PropsWithChildren {
-  test: boolean;
   renderActions?: React.ReactNode;
   renderBar?: React.ReactNode;
   renderFooter?: React.ReactNode;
