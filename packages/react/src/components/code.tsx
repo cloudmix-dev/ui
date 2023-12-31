@@ -73,7 +73,12 @@ function Code({ content, copy, fileExplorer, language, numbers }: CodeProps) {
             ))}
           </div>
         )}
-        <div className={cn("flex-grow", fileExplorer && "pt-2")}>
+        <div
+          className={cn(
+            "flex-grow max-w-full overflow-auto",
+            fileExplorer && "pt-2",
+          )}
+        >
           <Highlight
             code={content.trimEnd()}
             language={language}
