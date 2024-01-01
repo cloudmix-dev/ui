@@ -82,8 +82,8 @@ importers:
         specifier: ~18.2.0
         version: 18.2.0
       vite-plugin-dts:
-        specifier: ~3.6.4
-        version: 3.6.4(@types/node@18.19.4)(typescript@5.3.3)(vite@5.0.10)
+        specifier: ~3.7.0
+        version: 3.7.0(@types/node@18.19.4)(typescript@5.3.3)(vite@5.0.10)
 
   packages/tailwind:
     dependencies:
@@ -104,8 +104,8 @@ importers:
         specifier: ~4.6.9
         version: 4.6.9
       vite-plugin-dts:
-        specifier: ~3.6.4
-        version: 3.6.4(@types/node@18.19.4)(typescript@5.3.3)(vite@5.0.10)
+        specifier: ~3.7.0
+        version: 3.7.0(@types/node@18.19.4)(typescript@5.3.3)(vite@5.0.10)
 
   www/storybook:
     dependencies:
@@ -11742,8 +11742,8 @@ packages:
     engines: {node: '>= 0.8'}
     dev: true
 
-  /vite-plugin-dts@3.6.4(@types/node@18.19.4)(typescript@5.3.3)(vite@5.0.10):
-    resolution: {integrity: sha512-yOVhUI/kQhtS6lCXRYYLv2UUf9bftcwQK9ROxCX2ul17poLQs02ctWX7+vXB8GPRzH8VCK3jebEFtPqqijXx6w==}
+  /vite-plugin-dts@3.7.0(@types/node@18.19.4)(typescript@5.3.3)(vite@5.0.10):
+    resolution: {integrity: sha512-np1uPaYzu98AtPReB8zkMnbjwcNHOABsLhqVOf81b3ol9b5M2wPcAVs8oqPnOpr6Us+7yDXVauwkxsk5+ldmRA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       typescript: '*'
