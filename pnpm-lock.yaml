@@ -51,8 +51,8 @@ importers:
         specifier: ~0.7.0
         version: 0.7.0
       clsx:
-        specifier: ~2.0.1
-        version: 2.0.1
+        specifier: ~2.1.0
+        version: 2.1.0
       prism-react-renderer:
         specifier: ~2.3.1
         version: 2.3.1(react@18.2.0)
@@ -3703,7 +3703,7 @@ packages:
       '@react-aria/utils': 3.23.0(react@18.2.0)
       '@react-types/shared': 3.22.0(react@18.2.0)
       '@swc/helpers': 0.5.3
-      clsx: 2.0.1
+      clsx: 2.1.0
       react: 18.2.0
     dev: false
 
@@ -4205,7 +4205,7 @@ packages:
       '@react-stately/utils': 3.9.0(react@18.2.0)
       '@react-types/shared': 3.22.0(react@18.2.0)
       '@swc/helpers': 0.5.3
-      clsx: 2.0.1
+      clsx: 2.1.0
       react: 18.2.0
     dev: false
 
@@ -6910,8 +6910,8 @@ packages:
     engines: {node: '>=6'}
     dev: false
 
-  /clsx@2.0.1:
-    resolution: {integrity: sha512-PrYqtepbSWwrFmtHX0IHv3zUEbWn1psIqaIZyjB3b9wEGpRAkpyeKbCCCkCXJYiHZPjK7jckJvf2sEB/8VKPgQ==}
+  /clsx@2.1.0:
+    resolution: {integrity: sha512-m3iNNWpd9rl3jvvcBnu70ylMdrXt8Vlq4HYadnU5fwcOtvkSQWPmj7amUcDT2qYI7risszBjI5AUIUox9D16pg==}
     engines: {node: '>=6'}
     dev: false
 
@@ -9982,7 +9982,7 @@ packages:
       react: '>=16.0.0'
     dependencies:
       '@types/prismjs': 1.26.3
-      clsx: 2.0.1
+      clsx: 2.1.0
       react: 18.2.0
     dev: false
 
