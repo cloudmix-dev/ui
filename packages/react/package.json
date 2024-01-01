@@ -40,16 +40,16 @@
     "@heroicons/react": "~2.1.1",
     "@sindresorhus/slugify": "~2.2.1",
     "class-variance-authority": "~0.7.0",
-    "clsx": "~2.0.0",
+    "clsx": "~2.0.1",
     "prism-react-renderer": "~2.3.1",
     "prismjs": "~1.29.0",
     "react-aria-components": "~1.0.0",
-    "react-resizable-panels": "~1.0.5",
+    "react-resizable-panels": "~1.0.7",
     "sonner": "~1.2.4",
     "tailwind-merge": "~2.2.0"
   },
   "devDependencies": {
-    "@types/react": "~18.2.42",
+    "@types/react": "~18.2.46",
     "@vitejs/plugin-react": "~4.2.1",
     "react": "~18.2.0",
     "vite-plugin-dts": "~3.6.4"
