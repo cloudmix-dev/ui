@@ -45,6 +45,7 @@ import {
   type ResizableProps,
 } from "./components/resizable";
 import { Slider, type SliderProps } from "./components/slider";
+import { Slot, type SlotProps } from "./components/slot";
 import {
   TableOfContents,
   type TableOfContentsProps,
@@ -80,6 +81,7 @@ export {
   Radio,
   Resizable,
   Slider,
+  Slot,
   TableOfContents,
   Tabs,
   TextField,
@@ -112,6 +114,7 @@ export {
   type ResizablePanelProps,
   type ResizableProps,
   type SliderProps,
+  type SlotProps,
   type TableOfContentsProps,
   type TabsButtonProps,
   type TabsListProps,

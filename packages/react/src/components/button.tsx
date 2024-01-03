@@ -1,10 +1,12 @@
 import { type VariantProps, cva } from "class-variance-authority";
+import { ReactNode, forwardRef } from "react";
 import {
-  Button as AriaButton,
+  Button as BaseButton,
   type ButtonProps as BaseButtonProps,
 } from "react-aria-components";
 
 import { cn } from "../utils";
+import { Slot } from "./slot";
 
 const buttonVariants = cva(
   "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-neutral-50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-neutral-950",
@@ -43,14 +45,22 @@ export interface ButtonProps
   asChild?: boolean;
 }
 
-function Button({ className, variant, size, ...props }: ButtonProps) {
-  return (
-    <AriaButton
-      {...props}
-      className={cn(buttonVariants({ variant, size, className }))}
-    />
-  );
-}
+const Button = forwardRef<HTMLElement, ButtonProps>(
+  ({ asChild, children, className, variant, size, ...props }, forwardedRef) => {
+    const Comp = asChild ? Slot : BaseButton;
+
+    return (
+      <Comp
+        {...props}
+        // biome-ignore lint/suspicious/noExplicitAny: the forwardedRef can be for any React component
+        ref={forwardedRef as any}
+        className={cn(buttonVariants({ variant, size, className }))}
+      >
+        {children as ReactNode}
+      </Comp>
+    );
+  },
+);
 
 Button.displayName = "Button";
 
@@ -76,14 +86,20 @@ export interface ButtonSkeletonProps
   className?: string;
 }
 
-Button.Skeleton = function ButtonSkeleton({
-  size,
-  className,
-}: ButtonSkeletonProps) {
+function ButtonSkeleton({ size, className }: ButtonSkeletonProps) {
   return <div className={cn(buttonSkeletonVariants({ size, className }))} />;
-};
+}
+
+// @ts-expect-error
+Button.Skeleton = ButtonSkeleton;
 
 // @ts-expect-error
 Button.Skeleton.displayName = "Button.Skeleton";
 
-export { Button };
+const TypedButton = Button as React.ForwardRefExoticComponent<
+  ButtonProps & React.RefAttributes<HTMLElement>
+> & {
+  Skeleton: typeof ButtonSkeleton;
+};
+
+export { TypedButton as Button };

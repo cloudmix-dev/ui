@@ -98,6 +98,20 @@ export const Large = {
   },
 };
 
+type ButtonStory = StoryObj<typeof Button>;
+
+export const AsChild: ButtonStory = {
+  render: (props) => (
+    <Button asChild {...props}>
+      <a href="#test">Link button</a>
+    </Button>
+  ),
+  args: {
+    size: "default",
+    variant: "link",
+  },
+};
+
 type SkeletonStory = StoryObj<typeof Button.Skeleton>;
 
 export const Skeleton: SkeletonStory = {
