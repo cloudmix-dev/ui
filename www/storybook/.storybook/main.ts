@@ -15,7 +15,6 @@ const config: StorybookConfig = {
   addons: [
     getAbsolutePath("@storybook/addon-links"),
     getAbsolutePath("@storybook/addon-essentials"),
-    getAbsolutePath("@storybook/addon-onboarding"),
     getAbsolutePath("@storybook/addon-interactions"),
     "@storybook/addon-themes",
   ],
@@ -33,6 +32,9 @@ const config: StorybookConfig = {
       optimizeDeps: {
         include: ["@cloudmix-dev/react"],
         force: true,
+      },
+      define: {
+        "process.env.IS_PREACT": JSON.stringify("false"),
       },
     });
   },

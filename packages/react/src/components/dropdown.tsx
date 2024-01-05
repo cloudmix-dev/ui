@@ -83,4 +83,7 @@ export type DropdownMenuItemKey = Key;
 
 Dropdown.Skeleton = Button.Skeleton;
 
+// @ts-expect-error
+Dropdown.Skeleton.displayName = "Dropdown.Skeleton";
+
 export { Dropdown };
