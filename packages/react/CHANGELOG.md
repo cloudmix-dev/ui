@@ -1,5 +1,11 @@
 # @cloudmix-dev/react
 
+## 0.0.19
+
+### Patch Changes
+
+- 1d98e24: Add ExcalidrawDiagram component
+
 ## 0.0.18
 
 ### Patch Changes
