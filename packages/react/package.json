@@ -39,8 +39,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@excalidraw/excalidraw": "~0.17.2",
-    "@excalidraw/mermaid-to-excalidraw": "~0.2.0",
     "@headlessui/react": "~1.7.17",
     "@heroicons/react": "~2.1.1",
     "@sindresorhus/slugify": "~2.2.1",
