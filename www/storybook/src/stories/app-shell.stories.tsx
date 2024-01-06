@@ -10,79 +10,25 @@ import { type Meta, type StoryObj } from "@storybook/react";
 
 import { StoryLayout } from "../components/layout";
 
-function Content() {
+function Content({ paragraphs = 5 }: { paragraphs?: number }) {
   return (
-    <Prose className="m-auto">
-      <p>
-        Pellentesque habitant morbi tristique senectus et netus et malesuada
-        fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
-        ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam
-        egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend
-        leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum
-        erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean
-        fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci,
-        sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar
-        facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor
-        neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat
-        volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis
-        luctus, metus
-      </p>
-      <p>
-        Pellentesque habitant morbi tristique senectus et netus et malesuada
-        fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
-        ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam
-        egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend
-        leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum
-        erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean
-        fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci,
-        sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar
-        facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor
-        neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat
-        volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis
-        luctus, metus
-      </p>
-      <p>
-        Pellentesque habitant morbi tristique senectus et netus et malesuada
-        fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
-        ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam
-        egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend
-        leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum
-        erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean
-        fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci,
-        sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar
-        facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor
-        neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat
-        volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis
-        luctus, metus
-      </p>
-      <p>
-        Pellentesque habitant morbi tristique senectus et netus et malesuada
-        fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
-        ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam
-        egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend
-        leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum
-        erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean
-        fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci,
-        sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar
-        facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor
-        neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat
-        volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis
-        luctus, metus
-      </p>
-      <p>
-        Pellentesque habitant morbi tristique senectus et netus et malesuada
-        fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
-        ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam
-        egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend
-        leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum
-        erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean
-        fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci,
-        sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar
-        facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor
-        neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat
-        volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis
-        luctus, metus
-      </p>
+    <Prose className="m-auto p-4">
+      {new Array(paragraphs).fill(null).map((_, i) => (
+        <p key={`paragraph_${i}`}>
+          Pellentesque habitant morbi tristique senectus et netus et malesuada
+          fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
+          ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam
+          egestas semper. Aenean ultricies mi vitae est. Mauris placerat
+          eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
+          Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet,
+          wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum
+          rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in
+          turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus
+          faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.
+          Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor,
+          facilisis luctus, metus
+        </p>
+      ))}
     </Prose>
   );
 }
@@ -92,7 +38,7 @@ const meta: Meta<typeof AppShell> = {
   component: AppShell,
   decorators: [
     (Story: React.ComponentType) => (
-      <StoryLayout>
+      <StoryLayout padding={false}>
         <Story />
       </StoryLayout>
     ),
@@ -106,7 +52,7 @@ type AppShellStory = StoryObj<typeof AppShell>;
 
 export const Default: AppShellStory = {
   render: (props) => (
-    <div className="h-[50rem] w-full">
+    <div className="h-[50rem] w-full overflow-scroll">
       <AppShell
         {...props}
         renderLogo={
@@ -149,7 +95,7 @@ export const Default: AppShellStory = {
           </>
         }
       >
-        <Content />
+        <Content paragraphs={1} />
       </AppShell>
     </div>
   ),

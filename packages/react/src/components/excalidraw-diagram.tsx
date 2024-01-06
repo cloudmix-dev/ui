@@ -50,8 +50,6 @@ function ExcalidrawDiagram({
       (async () => {
         const newElements = await prepareDiagram(mermaid);
 
-        console.log("ELEMENTS", newElements);
-
         setElements(newElements);
         setLoading(false);
       })();
