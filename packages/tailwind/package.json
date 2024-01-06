@@ -1,6 +1,6 @@
 {
   "name": "@cloudmix-dev/tailwind",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.es.mjs",
   "types": "./dist/index.d.ts",
