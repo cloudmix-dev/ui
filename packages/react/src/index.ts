@@ -24,10 +24,10 @@ import {
   type DropdownMenuProps,
   type DropdownProps,
 } from "./components/dropdown";
-import {
-  ExcalidrawDiagram,
-  type ExcalidrawDiagramProps,
-} from "./components/excalidraw-diagram";
+// import {
+//   ExcalidrawDiagram,
+//   type ExcalidrawDiagramProps,
+// } from "./components/excalidraw-diagram";
 import { Form, type FormProps } from "./components/form";
 import { Logo, type LogoProps } from "./components/logo";
 import {
@@ -77,7 +77,7 @@ export {
   Checkbox,
   Code,
   Dropdown,
-  ExcalidrawDiagram,
+  // ExcalidrawDiagram,
   Form,
   Logo,
   NumberField,
@@ -107,7 +107,7 @@ export {
   type DropdownMenuItemProps,
   type DropdownMenuProps,
   type DropdownProps,
-  type ExcalidrawDiagramProps,
+  // type ExcalidrawDiagramProps,
   type FormProps,
   type LogoProps,
   type NumberFieldProps,
