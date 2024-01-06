@@ -1,9 +1,10 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
-import React, { Fragment, useState } from "react";
+import React, { Fragment, forwardRef, useState } from "react";
 
 import { cn } from "../utils";
 import { Button } from "./button";
+import { Slot } from "./slot";
 
 export interface AppShellProps extends React.PropsWithChildren {
   renderActions?: React.ReactNode;
@@ -26,7 +27,7 @@ function AppShell({
   const hasBar = Boolean(renderBar || renderActions);
 
   return (
-    <div className="relative h-full w-full overflow-hidden">
+    <div className="relative h-full w-full">
       {hasNav && (
         <Transition.Root show={sidebarOpen} as={Fragment}>
           <Dialog
@@ -97,7 +98,7 @@ function AppShell({
         </Transition.Root>
       )}
       {hasNav && (
-        <div className="hidden lg:absolute lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
+        <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
           <div className="flex flex-col gap-y-5 h-full overflow-y-auto bg-neutral-100 p-4 dark:bg-neutral-900">
             {renderLogo && (
               <div className="flex-shrink-0 py-4">{renderLogo}</div>
@@ -111,8 +112,10 @@ function AppShell({
           </div>
         </div>
       )}
-      <div className={cn("relative h-full max-h-full", hasNav && "lg:ml-72")}>
-        <div className="absolute top-0 left-0 w-full z-40 flex h-16 items-center gap-x-4 border-b border-neutral-200 bg-neutral-50 text-neutral-950 px-4 dark:bg-neutral-950 dark:text-neutral-50 dark:border-neutral-800">
+      <div
+        className={cn("fixed top-0 left-0 w-full z-40", hasNav && "lg:pl-72")}
+      >
+        <div className="flex h-16 items-center gap-x-4 border-b border-neutral-200 bg-neutral-50 text-neutral-950 px-4 dark:bg-neutral-950 dark:text-neutral-50 dark:border-neutral-800">
           {hasNav && (
             <button
               type="button"
@@ -136,11 +139,16 @@ function AppShell({
             </div>
           )}
         </div>
-        <main className="h-full max-h-full pt-16 overflow-hidden">
-          <div className="h-full max-h-full p-4 overflow-scroll">
-            {children}
+      </div>
+      <div className={cn("flex flex-col h-full", hasNav && "lg:pl-72")}>
+        <main className="flex-grow pt-16">{children}</main>
+        <footer>
+          <div className="container m-auto px-4">
+            <div className="flex justify-center items-center h-16 text-sm">
+              <p>&copy; {new Date().getFullYear()} Cloudmix</p>
+            </div>
           </div>
-        </main>
+        </footer>
       </div>
     </div>
   );
@@ -150,36 +158,43 @@ AppShell.displayName = "AppShell";
 
 export interface AppShellNavigationLinkProps extends React.PropsWithChildren {
   active?: boolean;
-  as?: React.ElementType;
+  asChild?: boolean;
   className?: string;
   href: string;
   hrefProp?: "href" | "to";
 }
 
-AppShell.NavigationLink = function NavigationLink({
-  active = false,
-  as = "a",
-  children,
-  href,
-  hrefProp = "href",
-  className,
-}: AppShellNavigationLinkProps) {
-  const Component = as;
+const AppShellNavigationLink = forwardRef<
+  HTMLAnchorElement,
+  AppShellNavigationLinkProps
+>(
+  (
+    { active = false, asChild, children, className, ...props },
+    forwardedRef,
+  ) => {
+    const Component = asChild ? Slot : "a";
 
-  return (
-    <Component
-      className={cn(
-        "group flex gap-x-3 rounded-md px-4 py-2 text-sm leading-6 font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-500 focus-visible:ring-offset-neutral-100 dark:focus-visible:ring-offset-neutral-900",
-        active
-          ? "bg-neutral-200 text-brand-600 dark:bg-neutral-800 dark:text-brand-500"
-          : "text-neutral-500 hover:text-neutral-950 hover:bg-neutral-200 dark:text-neutral-400 dark:hover:text-neutral-50 dark:hover:bg-neutral-800",
-        className,
-      )}
-      {...{ [hrefProp]: href }}
-    >
-      {children}
-    </Component>
-  );
-};
+    return (
+      <Component
+      // biome-ignore lint/suspicious/noExplicitAny: the forwardedRef can be for any React component
+      ref={forwardedRef as any}
+        className={cn(
+          "group flex gap-x-3 rounded-md px-4 py-2 text-sm leading-6 font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-500 focus-visible:ring-offset-neutral-100 dark:focus-visible:ring-offset-neutral-900",
+          active
+            ? "bg-neutral-200 text-brand-600 dark:bg-neutral-800 dark:text-brand-500"
+            : "text-neutral-500 hover:text-neutral-950 hover:bg-neutral-200 dark:text-neutral-400 dark:hover:text-neutral-50 dark:hover:bg-neutral-800",
+          className,
+        )}
+        {...props}
+      >
+        {children}
+      </Component>
+    );
+  },
+);
+
+AppShell.NavigationLink = AppShellNavigationLink;
+
+AppShell.NavigationLink.displayName = "AppShell.NavigationLink";
 
 export { AppShell };

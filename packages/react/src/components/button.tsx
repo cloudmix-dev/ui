@@ -47,17 +47,17 @@ export interface ButtonProps
 
 const Button = forwardRef<HTMLElement, ButtonProps>(
   ({ asChild, children, className, variant, size, ...props }, forwardedRef) => {
-    const Comp = asChild ? Slot : BaseButton;
+    const Component = asChild ? Slot : BaseButton;
 
     return (
-      <Comp
-        {...props}
+      <Component
         // biome-ignore lint/suspicious/noExplicitAny: the forwardedRef can be for any React component
         ref={forwardedRef as any}
         className={cn(buttonVariants({ variant, size, className }))}
+        {...props}
       >
         {children as ReactNode}
-      </Comp>
+      </Component>
     );
   },
 );
