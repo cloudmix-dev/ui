@@ -1,5 +1,11 @@
 # @cloudmix-dev/react
 
+## 0.0.20
+
+### Patch Changes
+
+- cbbc689: Fix AppShell scroll mechanics for better mobile support
+
 ## 0.0.19
 
 ### Patch Changes
