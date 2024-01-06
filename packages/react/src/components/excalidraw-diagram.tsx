@@ -1,12 +1,11 @@
-import {
-  Excalidraw,
-  THEME,
-  convertToExcalidrawElements,
-} from "@excalidraw/excalidraw";
-import { parseMermaidToExcalidraw } from "@excalidraw/mermaid-to-excalidraw";
+import * as excalidraw from "@excalidraw/excalidraw";
+import * as excalidrawMermaid from "@excalidraw/mermaid-to-excalidraw";
 
 import { useEffect, useRef, useState } from "react";
 import { cn } from "../utils";
+
+const { Excalidraw, THEME, convertToExcalidrawElements } = excalidraw;
+const { parseMermaidToExcalidraw } = excalidrawMermaid;
 
 export interface ExcalidrawDiagramProps {
   className?: string;
