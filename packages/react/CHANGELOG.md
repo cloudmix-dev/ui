@@ -1,5 +1,11 @@
 # @cloudmix-dev/react
 
+## 0.0.22
+
+### Patch Changes
+
+- 4e5315a: Temporarily remove the ExcalidrawDiagram component
+
 ## 0.0.21
 
 ### Patch Changes
