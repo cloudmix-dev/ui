@@ -1,5 +1,11 @@
 # @cloudmix-dev/react
 
+## 0.0.23
+
+### Patch Changes
+
+- fd8b87d: Update styles for Dropdown and Tabs components
+
 ## 0.0.22
 
 ### Patch Changes
