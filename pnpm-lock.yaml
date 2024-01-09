@@ -162,7 +162,7 @@ importers:
         specifier: ~7.6.7
         version: 7.6.7(react-dom@18.2.0)(react@18.2.0)
       '@types/node':
-        specifier: ~20.10.6
+        specifier: ~20.10.7
         version: 20.10.7
       '@types/react':
         specifier: ~18.2.47
