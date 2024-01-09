@@ -34,7 +34,7 @@ Tabs.List = function TabsList({
           typeof className === "function" ? className(...args) : className;
 
         return cn(
-          "inline-flex h-10 items-center justify-center bg-neutral-200 text-neutral-500 rounded-md p-1 dark:bg-neutral-800 dark:text-neutral-400",
+          "flex h-10 items-center justify-center bg-neutral-200 text-neutral-500 rounded-lg p-1 dark:bg-neutral-800 dark:text-neutral-400",
           classNameResult,
         );
       }}
@@ -62,7 +62,7 @@ Tabs.Button = function TabsButton({
           typeof className === "function" ? className(...args) : className;
 
         return cn(
-          "inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1.5 text-sm font-medium ring-offset-neutral-50 cursor-pointer transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[selected=true]:bg-neutral-100 data-[selected=true]:text-neutral-950 data-[selected=true]:shadow-sm dark:ring-offset-neutral-950 dark:data-[selected=true]:bg-neutral-900 dark:data-[selected=true]:text-neutral-50",
+          "inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1.5 text-sm font-medium ring-offset-neutral-50 cursor-pointer transition-all hover:text-brand-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[selected=true]:bg-neutral-100 data-[selected=true]:text-neutral-950 data-[selected=true]:shadow-sm dark:ring-offset-neutral-950 dark:data-[selected=true]:bg-neutral-900 dark:data-[selected=true]:text-neutral-50",
           classNameResult,
         );
       }}
