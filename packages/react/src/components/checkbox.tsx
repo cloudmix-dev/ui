@@ -20,14 +20,14 @@ function Checkbox({ label, className, isRequired, ...props }: CheckboxProps) {
         const classNameResult =
           typeof className === "function" ? className(...args) : className;
 
-        return cn("group data-[disabled=true]:opacity-50", classNameResult);
+        return cn("group disabled:opacity-50", classNameResult);
       }}
     >
       <span className="flex items-center space-x-2">
-        <span className="flex justify-center items-center h-5 w-5 shrink-0 border border-neutral-200 bg-neutral-100 rounded-md text-neutral-950 ring-offset-neutral-50 cursor-pointer group-hover:bg-neutral-200 group-data-[focus-visible=true]:outline-none group-data-[focus-visible=true]:ring-2 group-data-[focus-visible=true]:ring-brand-500 group-data-[focus-visible=true]:ring-offset-2 group-data-[disabled=true]:cursor-not-allowed group-data-[selected=true]:bg-brand-500 group-data-[selected=true]:text-brand-50 group-data-[selected=true]:border-brand-500 dark:bg-neutral-900 dark:border-neutral-800 dark:ring-offset-neutral-950 dark:group-hover:bg-neutral-700 dark:group-data-[selected=true]:bg-brand-500 dark:group-data-[selected=true]:text-brand-50 dark:group-data-[selected=true]:border-brand-500">
-          <CheckIcon className="hidden h-4 w-4 group-data-[selected=true]:block" />
+        <span className="flex justify-center items-center h-5 w-5 shrink-0 border border-neutral-200 bg-neutral-100 rounded-md text-neutral-950 ring-offset-neutral-50 cursor-pointer group-hover:bg-neutral-200 group-focus:outline-none group-focus-visible:ring-2 group-focus-visible:ring-brand-500 group-focus-visible:ring-offset-2 group-disabled:cursor-not-allowed group-selected:bg-brand-500 group-selected:text-brand-50 group-selected:border-brand-500 dark:bg-neutral-900 dark:border-neutral-800 dark:ring-offset-neutral-950 dark:group-hover:bg-neutral-700 dark:group-selected:bg-brand-500 dark:group-selected:text-brand-50 dark:group-selected:border-brand-500">
+          <CheckIcon className="hidden h-4 w-4 group-selected:block" />
         </span>
-        <span className="text-neutral-950 text-sm cursor-pointer group-data-[disabled=true]:cursor-not-allowed dark:text-neutral-50">
+        <span className="text-neutral-950 text-sm cursor-pointer group-disabled:cursor-not-allowed dark:text-neutral-50">
           {label}
           {isRequired && (
             <>

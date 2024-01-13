@@ -28,9 +28,9 @@ Dropdown.Menu = function DropdownMenu({
   ...props
 }: DropdownMenuProps) {
   return (
-    <Popover className="data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2">
+    <Popover className="state-open:animate-in state-closed:animate-out state-closed:fade-out-0 state-open:fade-in-0 state-closed:zoom-out-95 state-open:zoom-in-95 side-bottom:slide-in-from-top-2 side-left:slide-in-from-right-2 side-right:slide-in-from-left-2 side-top:slide-in-from-bottom-2">
       <Menu
-        className="z-50 min-w-[8rem] overflow-hidden rounded-lg bg-neutral-100 border border-neutral-200 p-1 text-neutral-950 shadow-md focus-visible:outline-none dark:bg-neutral-900 dark:border-neutral-800 dark:text-neutral-50"
+        className="z-50 min-w-[8rem] overflow-hidden rounded-lg bg-neutral-100 border border-neutral-200 p-1 text-neutral-950 shadow-md focus:outline-none dark:bg-neutral-900 dark:border-neutral-800 dark:text-neutral-50"
         {...props}
       >
         {children}
@@ -60,7 +60,7 @@ Dropdown.MenuItem = function DropdownMenuItem({
   return (
     <MenuItem
       {...props}
-      className="relative flex cursor-pointer select-none items-center rounded-md px-2 py-1.5 text-sm outline-none transition-colors focus:bg-neutral-200 focus:text-brand-600 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:focus:bg-neutral-800 dark:focus:text-brand-500"
+      className="relative flex cursor-pointer select-none items-center rounded-md px-2 py-1.5 text-sm outline-none transition-colors focus:bg-neutral-200 focus:text-brand-600 disabled:pointer-events-none disabled:opacity-50 dark:focus:bg-neutral-800 dark:focus:text-brand-500"
     >
       {children}
     </MenuItem>
