@@ -25,15 +25,41 @@ export const Default = {
   args: {
     title: "This is a callout",
     children: "This is the message for the callout.",
+    variant: "default",
+  },
+};
+
+export const Info = {
+  args: {
+    title: "This is a callout",
+    children: "This is the message for the callout.",
+    variant: "info",
+  },
+};
+
+export const Warning = {
+  args: {
+    title: "This is a callout",
+    children: "This is the message for the callout.",
+    variant: "warning",
+  },
+};
+
+export const Danger = {
+  args: {
+    title: "This is a callout",
+    children: "This is the message for the callout.",
+    variant: "danger",
   },
 };
 
 export const WithIcon: CalloutStory = {
-  render: () => (
-    <Callout
-      title="This is a callout"
-      children="This is the message for the callout."
-      icon={<LightBulbIcon className="w-full" />}
-    />
+  render: (props) => (
+    <Callout icon={<LightBulbIcon className="w-full" />} {...props} />
   ),
+  args: {
+    title: "This is a callout",
+    children: "This is the message for the callout.",
+    variant: "default",
+  },
 };

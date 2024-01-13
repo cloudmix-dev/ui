@@ -26,7 +26,7 @@ export function config(config?: Config) {
           neutral: colors.zinc,
           brand: colors.indigo,
           secondary: colors.blue,
-          info: colors.purple,
+          info: colors.cyan,
           success: colors.emerald,
           danger: colors.red,
           warning: colors.amber,
