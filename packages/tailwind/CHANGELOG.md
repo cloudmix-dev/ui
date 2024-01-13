@@ -1,5 +1,11 @@
 # @cloudmix-dev/tailwind
 
+## 0.0.24
+
+### Patch Changes
+
+- 9ffd5b6: Add React Aria Components Tailwind plugin
+
 ## 0.0.23
 
 ## 0.0.22
