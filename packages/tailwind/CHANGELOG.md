@@ -1,5 +1,11 @@
 # @cloudmix-dev/tailwind
 
+## 0.0.25
+
+### Patch Changes
+
+- 7bea5d7: Update Callout component styling
+
 ## 0.0.24
 
 ### Patch Changes
