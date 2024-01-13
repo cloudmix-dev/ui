@@ -9,21 +9,23 @@ import { cn } from "../utils";
 import { Slot } from "./slot";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-neutral-50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-neutral-950",
+  "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-neutral-50 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-neutral-950",
   {
     variants: {
       variant: {
         primary:
-          "bg-neutral-800 text-neutral-50 hover:bg-neutral-700 dark:bg-neutral-200 dark:text-neutral-950 dark:hover:bg-neutral-300",
+          "bg-neutral-800 text-neutral-50 hover:bg-neutral-700 pressed:bg-neutral-700 dark:bg-neutral-200 dark:text-neutral-950 dark:hover:bg-neutral-300 dark:pressed:bg-neutral-300",
         secondary:
-          "bg-neutral-200 text-neutral-950 hover:bg-neutral-300 dark:bg-neutral-800 dark:text-neutral-50 dark:hover:bg-neutral-700",
-        brand: "bg-brand-600 text-brand-50 hover:bg-brand-500",
-        danger: "bg-danger-600 text-danger-50 hover:bg-danger-500",
+          "bg-neutral-200 text-neutral-950 hover:bg-neutral-300 pressed:bg-neutral-300 dark:bg-neutral-800 dark:text-neutral-50 dark:hover:bg-neutral-700 dark:pressed:bg-neutral-700",
+        brand:
+          "bg-brand-600 text-brand-50 hover:bg-brand-500 pressed:bg-brand-500",
+        danger:
+          "bg-danger-600 text-danger-50 hover:bg-danger-500 pressed:bg-danger-500",
         outline:
-          "text-neutral-950 border border-neutral-950 bg-transparent hover:bg-neutral-200 dark:text-neutral-50 dark:border-neutral-50 dark:hover:bg-neutral-700",
+          "text-neutral-950 border border-neutral-950 bg-transparent hover:bg-neutral-200 pressed:bg-neutral-200 dark:text-neutral-50 dark:border-neutral-50 dark:hover:bg-neutral-700 dark:pressed:bg-neutral-700",
         ghost:
-          "text-neutral-950 hover:bg-neutral-200 dark:text-neutral-50 dark:hover:bg-neutral-800",
-        link: "text-neutral-950 underline-offset-4 hover:underline dark:text-neutral-50",
+          "text-neutral-950 hover:bg-neutral-200 pressed:bg-neutral-200 dark:text-neutral-50 dark:hover:bg-neutral-800 dark:pressed:bg-neutral-800",
+        link: "text-neutral-950 underline-offset-4 hover:underline pressed:underline dark:text-neutral-50",
       },
       size: {
         default: "h-10 px-4 py-2",

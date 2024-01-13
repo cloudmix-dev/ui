@@ -2,6 +2,8 @@ import containerQueries from "@tailwindcss/container-queries";
 import typography from "@tailwindcss/typography";
 import merge from "lodash.merge";
 import { type Config } from "tailwindcss";
+import animate from "tailwindcss-animate";
+import reactAria from "tailwindcss-react-aria-components";
 import colors from "tailwindcss/colors";
 import defaultTheme from "tailwindcss/defaultTheme";
 import plugin from "tailwindcss/plugin";
@@ -43,6 +45,8 @@ export function config(config?: Config) {
       plugins: [
         typography,
         containerQueries,
+        animate,
+        reactAria,
         plugin(({ addComponents }) => {
           const text = {
             color: colors.zinc[50],

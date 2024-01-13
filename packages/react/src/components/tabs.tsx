@@ -62,7 +62,7 @@ Tabs.Button = function TabsButton({
           typeof className === "function" ? className(...args) : className;
 
         return cn(
-          "inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1.5 text-sm font-medium ring-offset-neutral-50 cursor-pointer transition-all hover:text-brand-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[selected=true]:bg-neutral-100 data-[selected=true]:text-neutral-950 data-[selected=true]:shadow-sm dark:ring-offset-neutral-950 dark:data-[selected=true]:bg-neutral-900 dark:data-[selected=true]:text-neutral-50",
+          "inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1.5 text-sm font-medium ring-offset-neutral-50 cursor-pointer transition-all hover:text-brand-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 selected:bg-neutral-100 selected:text-neutral-950 selected:shadow-sm dark:ring-offset-neutral-950 dark:selected:bg-neutral-900 dark:selected:text-neutral-50",
           classNameResult,
         );
       }}
@@ -90,7 +90,7 @@ Tabs.Panel = function TabsPanel({
           typeof className === "function" ? className(...args) : className;
 
         return cn(
-          "mt-2 text-neutral-950 ring-offset-neutral-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-50 focus-visible:ring-offset-2 dark:text-neutral-50 dark:ring-offset-neutral-950",
+          "mt-2 text-neutral-950 ring-offset-neutral-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-50 focus-visible:ring-offset-2 dark:text-neutral-50 dark:ring-offset-neutral-950",
           classNameResult,
         );
       }}
