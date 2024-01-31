@@ -24,7 +24,7 @@
     "@storybook/addon-themes": "~7.6.8",
     "@storybook/blocks": "~7.6.10",
     "@storybook/manager-api": "~7.6.8",
-    "@storybook/react": "~7.6.8",
+    "@storybook/react": "~7.6.11",
     "@storybook/react-vite": "~7.6.8",
     "@storybook/test": "~7.6.8",
     "@storybook/theming": "~7.6.8",
