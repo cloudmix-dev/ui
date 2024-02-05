@@ -16,7 +16,7 @@
     "react-dom": "~18.2.0"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "~4.20231218.0",
+    "@cloudflare/workers-types": "~4.20240129.0",
     "@cloudmix-dev/tailwind": "workspace:~0.0.25",
     "@storybook/addon-essentials": "~7.6.12",
     "@storybook/addon-interactions": "~7.6.12",

@@ -132,8 +132,8 @@ importers:
         version: 18.2.0(react@18.2.0)
     devDependencies:
       '@cloudflare/workers-types':
-        specifier: ~4.20231218.0
-        version: 4.20231218.0
+        specifier: ~4.20240129.0
+        version: 4.20240129.0
       '@cloudmix-dev/tailwind':
         specifier: workspace:~0.0.25
         version: link:../../packages/tailwind
@@ -1808,8 +1808,8 @@ packages:
     dev: true
     optional: true
 
-  /@cloudflare/workers-types@4.20231218.0:
-    resolution: {integrity: sha512-Vs1FKjfUjXYGbCsXzkl+ITp0Iyb6QiW6+vTERTNThC+v96T0IvPVAioH4tT20rXwoxAfxh380mAaxYtTrJUNVg==}
+  /@cloudflare/workers-types@4.20240129.0:
+    resolution: {integrity: sha512-VyHbih/bqh/RN2FRxnXznG0bpBIg9RfSP1ldbAVnCXFinjOdv0zm2P/RWqOVN9+FgU5sanRltwwT7jGngxZy8w==}
     dev: true
 
   /@colors/colors@1.5.0:
