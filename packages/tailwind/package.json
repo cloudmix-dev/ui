@@ -44,7 +44,7 @@
   },
   "devDependencies": {
     "@types/lodash.merge": "~4.6.9",
-    "vite-plugin-dts": "~3.7.0"
+    "vite-plugin-dts": "~3.7.2"
   },
   "engines": {
     "node": ">=18.0.0"
